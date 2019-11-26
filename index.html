@@ -2,13 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="src/main.js"></script>
     <title>Data Structure Visualizer</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<form>
-    <p><textarea cols="30" rows="10"></textarea></p>
-    <p><button onclick="test()" type="button">Play</button></p>
-</form>
+
+<div class="container">
+    <div class="input">
+        <form>
+            <p><textarea id="code" cols="80" rows="30"></textarea></p>
+            <p><button onclick="executeCode()" type="button">Execute</button></p>
+        </form>
+    </div>
+    <div class="canvas">
+        <canvas id="nodes"></canvas>
+    </div>
+</div>
+
+<script src="src/util.js"></script>
+<script src="src/api.js"></script>
+<script src="src/globals.js"></script>
+<script src="src/init.js"></script>
 </body>
 </html>

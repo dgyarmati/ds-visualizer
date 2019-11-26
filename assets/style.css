@@ -1,0 +1,13 @@
+.container {
+    position: relative;
+}
+
+.input {
+    position: absolute;
+    z-index: 10;
+}
+
+.canvas {
+    position: absolute;
+}
+
