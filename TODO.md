@@ -43,3 +43,4 @@ TODO
     - option to rotate tree
     
     bug: bigger trees not displayed
+    add: Point class
