@@ -7,22 +7,37 @@
 </head>
 <body>
 
+<div id="editor">function foo(items) {
+    var x = "All this is syntax highlighted";
+    return x;
+    }</div>
+<div class="canvas">
+
 <div class="container">
-    <div class="input">
-        <form>
-            <p><textarea id="code" cols="80" rows="30"></textarea></p>
-            <p><button onclick="executeInput()" type="button">Execute</button></p>
-        </form>
-    </div>
-    <div class="canvas">
+<!--    <div class="input">-->
+<!--        <form>-->
+<!--            <p><textarea id="code" cols="80" rows="30"></textarea></p>-->
+<!--            <p><button onclick="executeInput()" type="button">Execute</button></p>-->
+<!--        </form>-->
+<!--    </div>-->
+
         <canvas id="nodes"></canvas>
     </div>
 </div>
 
-<script src="src/util.js"></script>
-<script src="src/api.js"></script>
-<script src="src/globals.js"></script>
-<script src="src/panning-setup.js"></script>
-<script src="src/init.js"></script>
+<!--<script src="src/util.js"></script>-->
+<!--<script src="src/api.js"></script>-->
+<!--<script src="src/globals.js"></script>-->
+<!--<script src="src/panning-setup.js "></script>-->
+<!--<script src="src/init.js"></script>-->
+
+<script src="lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+    const editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/javascript");
+</script>
+
 </body>
 </html>
