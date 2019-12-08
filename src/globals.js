@@ -1,8 +1,9 @@
-const CANVAS = document.getElementById("nodes");
-const CONTEXT = CANVAS.getContext('2d');
 const NODE_COORDINATES = new Map();    // stores the nodes and their coordinates to be drawn at; example: [node: {x: 0, y: 2}]
 
-CANVAS.width = window.innerWidth - 20;
+const CANVAS = document.getElementById("nodes");
+const CONTEXT = CANVAS.getContext('2d');
+
+CANVAS.width = window.innerWidth - 30;
 CANVAS.height = window.innerHeight;
 
 const X = Math.floor(CANVAS.width / 2);
@@ -11,25 +12,6 @@ const CHANGE_X = 50;
 const CHANGE_Y = 70;
 
 let TREE = null;
-
-let globalPanAttr = {
-    scale: 1,
-    offset: {
-        x: 0,
-        y: 0,
-    },
-};
-
-let panAttr = {
-    start: {
-        x: null,
-        y: null,
-    },
-    offset: {
-        x: 0,
-        y: 0,
-    },
-};
 
 const DEFAULT_TEXT =
     'class Node {\n' +
