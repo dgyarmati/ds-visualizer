@@ -1,7 +1,4 @@
-/**
- * Attempts to parse and execute JS code provided by the user.
- */
-
+// canvas panning setup
 CANVAS.addEventListener("mousedown", startPan);
 
 function pan() {
@@ -36,6 +33,7 @@ function trackMouse(e) {
     panAttr.offset.y = globalPanAttr.offset.y + offsetY;
 }
 
+// reading user input and attempting to parse it as JS code, creating a tree
 function executeInput() {
     NODE_COORDINATES.clear();
     clearCanvas();
