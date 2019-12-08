@@ -2,6 +2,11 @@ const CANVAS = document.getElementById("nodes");
 const CONTEXT = CANVAS.getContext('2d');
 const NODE_COORDINATES = new Map();    // stores the nodes and their coordinates to be drawn at; example: [node: {x: 0, y: 2}]
 
+const X = Math.floor(window.innerWidth / 2);
+const Y = Math.floor(window.innerHeight / 6);
+const CHANGE_X = 50;
+const CHANGE_Y = 70;
+
 const DEFAULT_TEXT =
     'class Node {\n' +
     '    constructor(data) {\n' +

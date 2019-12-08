@@ -60,13 +60,12 @@ function buildMatrix(tree) {
  * @param  matrix                      - matrix of nodes
  */
 function createNodeCoordinates(matrix) {
-    let x = 800;
-    let y = 75;
-    let right = 50;
-    let down = 70;
+    let y = Y;
+    let right = CHANGE_X;
+    let down = CHANGE_Y;
 
     for (let i = 0; i < matrix.length; i++) {
-        x = 800;
+        let x = X;
         if (i > 0) y += down;
 
         const nodes = matrix[i];
