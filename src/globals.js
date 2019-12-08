@@ -10,6 +10,27 @@ const Y = Math.floor(CANVAS.height / 6);
 const CHANGE_X = 50;
 const CHANGE_Y = 70;
 
+let TREE = null;
+
+let globalPanAttr = {
+    scale: 1,
+    offset: {
+        x: 0,
+        y: 0,
+    },
+};
+
+let panAttr = {
+    start: {
+        x: null,
+        y: null,
+    },
+    offset: {
+        x: 0,
+        y: 0,
+    },
+};
+
 const DEFAULT_TEXT =
     'class Node {\n' +
     '    constructor(data) {\n' +

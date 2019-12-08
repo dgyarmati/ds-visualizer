@@ -11,6 +11,7 @@
  * @param  tree                       - tree structure provided by the user
  */
 function draw(tree) {
+    TREE = tree;
     let matrix = buildMatrix(tree);
     createNodeCoordinates(matrix);
     changeCoordinatesForDefaultTree(matrix);
