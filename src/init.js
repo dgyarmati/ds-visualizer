@@ -1,4 +1,4 @@
-// canvas panning setup
+// canvas panning setup - code is written by https://codereview.stackexchange.com/users/32789/akinuri (see https://jsfiddle.net/akinuri/0Lh671kp/1/ for the original)
 CANVAS.addEventListener("mousedown", startPan);
 
 function pan() {
