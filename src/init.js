@@ -1,8 +1,3 @@
-function resizeCanvas() {
-    CANVAS.width = window.innerWidth;
-    CANVAS.height = window.innerHeight;
-}
-
 /**
  * Tries to parse and execute code provided by the user.
  */
@@ -22,7 +17,6 @@ function clearCanvas() {
 
 function init() {
     document.getElementById('code').innerHTML = DEFAULT_TEXT;
-    resizeCanvas();
     executeCode();
 }
 
