@@ -35,8 +35,14 @@
 
 <script>
     const editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
+    editor.setTheme("ace/theme/solarized_light");
     editor.session.setMode("ace/mode/javascript");
+    editor.resize();
+    editor.setOptions({
+        fontSize: "10pt",
+        selectionStyle: "text",
+        showPrintMargin: false,
+    });
 </script>
 
 </body>

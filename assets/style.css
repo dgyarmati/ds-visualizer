@@ -21,6 +21,7 @@
     width: 34%;
     height: 98%;
     border-radius: 20px;
+    resize: both;
 }
 
 .ace_content {
