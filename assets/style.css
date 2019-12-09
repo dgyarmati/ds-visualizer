@@ -20,5 +20,14 @@
     left: 0;
     width: 34%;
     height: 98%;
+    border-radius: 20px;
+}
+
+.ace_content {
+    margin-top: 2vh;
+}
+
+.ace_gutter-layer {
+    margin-top: 2vh;
 }
 
