@@ -31,7 +31,7 @@
     opacity: 1;
     bottom: 0;
     right: 0;
-    cursor: se-resize;
+    cursor: url('se-resize.png'), se-resize;
     position: absolute;
     z-index: 9;
     width: 20px;
