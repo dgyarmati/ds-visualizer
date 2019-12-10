@@ -31,10 +31,12 @@
     opacity: 1;
     bottom: 0;
     right: 0;
-    cursor: url('se-resize.png'), se-resize;
     position: absolute;
     z-index: 9;
     width: 20px;
     height: 20px;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    border-color: transparent #C8C8C8 #C8C8C8 transparent;
 }
 
