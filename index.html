@@ -77,11 +77,14 @@
             // handle mouse movement
             $(document).mousemove(function (e) {
                 var actualY = e.pageY - wpoffset;
+                var actualX = e.pageX + wpoffset;
                 // editor height
                 var eheight = actualY - top_offset;
+                var ewidth = actualX + top_offset;
 
                 // Set wrapper height
                 $(id_wrapper).css('height', eheight);
+                $(id_wrapper).css('width', ewidth);
 
                 // Set dragbar opacity while dragging (set to 0 to not show)
                 $(id_dragbar).css('opacity', 0.15);
@@ -93,8 +96,13 @@
                 var ctx_editor = $('#' + id_editor);
 
                 var actualY = e.pageY - wpoffset;
+                var actualX = e.pageX + wpoffset;
+
                 var top_offset = ctx_editor.offset().top - wpoffset;
+                var side_offset = ctx_editor.offset().top + wpoffset;
+
                 var eheight = actualY - top_offset;
+                var ewidth = actualX + side_offset;
 
                 $(document).unbind('mousemove');
 
@@ -103,6 +111,7 @@
 
                 // Set height on actual editor element, and opacity back to 1
                 ctx_editor.css('height', eheight).css('opacity', 1);
+                ctx_editor.css('width', ewidth).css('opacity', 1);
 
                 // Trigger ace editor resize()
                 editor.resize();
