@@ -9,7 +9,7 @@
 
 <div id="editor_wrapper" class="app_editor_wrapper">
     <div id="editor" class="app_editor">function foo(items) {
-        var x = "All this is syntax highlighted";
+        let x = "All this is syntax highlighted";
         return x;
         }
     </div>
@@ -59,13 +59,13 @@
     window.draggingAceEditor = {};
 
     function makeAceEditorResizable(editor) {
-        var id_editor = editor.container.id;
-        var id_dragbar = id_editor + '_dragbar';
-        var id_wrapper = id_editor + '_wrapper';
-        var wpoffset = 0;
+        let id_editor = editor.container.id;
+        let id_dragbar = id_editor + '_dragbar';
+        let id_wrapper = id_editor + '_wrapper';
+        let wpoffset = 0;
         window.draggingAceEditor[id_editor] = false;
 
-        var action_mousedown = function (e) {
+        let action_mousedown = function (e) {
             e.preventDefault();
 
             window.draggingAceEditor[id_editor] = true;
@@ -76,28 +76,26 @@
             document.addEventListener("mousemove", action_document_mousemove);
         };
 
-        var action_document_mousemove = function (e) {
-            var _editor = document.getElementById(id_editor);
-            var rect = _editor.getBoundingClientRect();
+        let action_document_mousemove = function (e) {
+            let _editor = document.getElementById(id_editor);
+            let rect = _editor.getBoundingClientRect();
 
-            var rsl = {
+            let rsl = {
                 top: rect.top + document.body.scrollTop
             };
 
-            var top_offset = rsl.top - wpoffset;
+            let top_offset = rsl.top - wpoffset;
 
-            var actualY = e.pageY - wpoffset;
-            var actualX = e.pageX + wpoffset;
+            let actualY = e.pageY - wpoffset;
+            let actualX = e.pageX + wpoffset;
 
             // editor height
-            var eheight = actualY - top_offset;
-            var ewidth = actualX + top_offset;
+            let eheight = actualY - top_offset;
+            let ewidth = actualX + top_offset;
 
             // Set wrapper height
             document.getElementById(id_wrapper).style.height = eheight + "px";
             document.getElementById(id_wrapper).style.width = ewidth + "px";
-            document.getElementById(id_dragbar).style.width = ewidth + "px";
-            document.getElementById(id_dragbar).style.width = ewidth + "px";
 
             // Set dragbar opacity while dragging (set to 0 to not show)
             document.getElementById(id_dragbar).style.opacity = '0.15';
@@ -105,22 +103,22 @@
 
         document.getElementById(id_dragbar).addEventListener("mousedown", action_mousedown);
 
-        var action_mouseup = function (e) {
+        let action_mouseup = function (e) {
             if (window.draggingAceEditor[id_editor]) {
-                var ctx_editor = document.getElementById(id_editor);
+                let ctx_editor = document.getElementById(id_editor);
 
-                var rect = ctx_editor.getBoundingClientRect();
+                let rect = ctx_editor.getBoundingClientRect();
 
-                var rsl = {
+                let rsl = {
                     top: rect.top + document.body.scrollTop
                 };
 
-                var actualY = e.pageY - wpoffset;
-                var actualX = e.pageX + wpoffset;
-                var top_offset = rsl.top - wpoffset;
-                var side_offset = rsl.top + wpoffset;
-                var eheight = actualY - top_offset;
-                var ewidth = actualX + side_offset;
+                let actualY = e.pageY - wpoffset;
+                let actualX = e.pageX + wpoffset;
+                let top_offset = rsl.top - wpoffset;
+                let side_offset = rsl.top + wpoffset;
+                let eheight = actualY - top_offset;
+                let ewidth = actualX + side_offset;
 
                 document.removeEventListener("mousemove", action_document_mousemove);
 
