@@ -7,29 +7,19 @@
 </head>
 <body>
 
-<div id="editor_wrapper" class="app_editor_wrapper">
-    <div id="editor" class="app_editor">function foo(items) {
-        let x = "All this is syntax highlighted";
-        return x;
-        }
+<div class="container">
+    <div id="editor_wrapper" class="app_editor_wrapper">
+        <div id="editor" class="app_editor">function foo(items) {
+            let x = "All this is syntax highlighted";
+            return x;
+            }
+        </div>
+        <div id="editor_dragbar" class="app_editor_dragbar">
+        </div>
     </div>
-    <div id="editor_dragbar" class="app_editor_dragbar">
-    </div>
+
+    <canvas id="nodes"></canvas>
 </div>
-
-<!--<div class="canvas">-->
-
-<!--    <div class="container">-->
-<!--        &lt;!&ndash;    <div class="input">&ndash;&gt;-->
-<!--        &lt;!&ndash;        <form>&ndash;&gt;-->
-<!--        &lt;!&ndash;            <p><textarea id="code" cols="80" rows="30"></textarea></p>&ndash;&gt;-->
-<!--        &lt;!&ndash;            <p><button onclick="executeInput()" type="button">Execute</button></p>&ndash;&gt;-->
-<!--        &lt;!&ndash;        </form>&ndash;&gt;-->
-<!--        &lt;!&ndash;    </div>&ndash;&gt;-->
-
-<!--        <canvas id="nodes"></canvas>-->
-<!--    </div>-->
-<!--</div>-->
 
 <!--<script src="src/util.js"></script>-->
 <!--<script src="src/api.js"></script>-->
@@ -40,6 +30,25 @@
 <script src="lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 
 <script>
+    const CANVAS = document.getElementById("nodes");
+    const CONTEXT = CANVAS.getContext('2d');
+
+    CANVAS.width = window.innerWidth - 30;
+    CANVAS.height = window.innerHeight;
+
+    // function draw() {
+    //     var canvas = document.getElementById('nodes');
+    //     if (canvas.getContext) {
+    //         var ctx = canvas.getContext('2d');
+    //
+    //         ctx.fillRect(25, 25, 100, 100);
+    //         ctx.clearRect(45, 45, 60, 60);
+    //         ctx.strokeRect(50, 50, 50, 50);
+    //     }
+    // }
+    //
+    // draw();
+
     const editor = ace.edit("editor");
     editor.setTheme("ace/theme/solarized_light");
     editor.session.setMode("ace/mode/javascript");

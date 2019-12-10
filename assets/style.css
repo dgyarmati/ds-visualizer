@@ -1,13 +1,10 @@
 .container {
+    width: 95vw;
+    height: 100vh;
     position: relative;
 }
 
-.input {
-    position: absolute;
-    z-index: 10;
-}
-
-.canvas {
+#nodes {
     position: absolute;
 }
 
@@ -20,6 +17,8 @@
     height: 90%;
     border-radius: 20px 20px 0 20px;
     background-color: #FCF7E3;
+    z-index: 10;
+    opacity: 0.90;
 }
 
 .app_editor {
