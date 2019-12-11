@@ -100,12 +100,11 @@ function setupCodeEditor() {
         fontSize: "10pt",
         selectionStyle: "text",
         showPrintMargin: false,
-        // maxLines: getLengthOfLongestLine(DEFAULT_CODE),
     });
 
     const editorId = EDITOR.container.id;
     const wrapperElementId = editorId + 'Wrapper';
-    // document.getElementById(wrapperElementId).style.width = getLengthOfLongestLine(DEFAULT_CODE) + "pc";
+    document.getElementById(wrapperElementId).style.width = (getLengthOfLongestLine(DEFAULT_CODE) + 4) + "ch";
 
     makeAceEditorResizable();
 }
