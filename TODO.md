@@ -49,5 +49,5 @@ TODO
     - bug: resize part moves to the wrong place at window resize
     - prevent text selection in button
     - closeable tutorial button
-    - bug: clicking on drag element makes editor expand
+    - check event listeners
     add: Point class

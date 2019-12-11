@@ -76,8 +76,8 @@ function makeAceEditorResizable() {
 
             document.removeEventListener("mousemove", mousemoveAction);
 
-            editorElement.style.height = editorHeight + 'px';
-            editorElement.style.width = editorWidth + 'px';
+            if (editorHeight <= wrapperElement.style.height) editorElement.style.height = editorHeight + 'px';
+            if (editorWidth <= wrapperElement.style.width) editorElement.style.width = editorWidth + 'px';
             editorElement.style.opacity = '1';
 
             editorButton.style.display = 'block';
