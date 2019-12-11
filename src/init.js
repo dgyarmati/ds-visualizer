@@ -56,7 +56,7 @@ function makeAceEditorResizable() {
         dragbarElement.style.opacity = '0.15';
     };
 
-    document.getElementById(dragbarId).addEventListener("mousedown", mousedownAction);
+    dragbarElement.addEventListener("mousedown", mousedownAction);
 
     let mouseupAction = function (event) {
         if (window.draggingAceEditor[editorId]) {
@@ -74,8 +74,6 @@ function makeAceEditorResizable() {
             const editorHeight = actualY - topOffset;
             const editorWidth = actualX + sideOffset;
 
-            document.removeEventListener("mousemove", mousemoveAction);
-
             if (editorHeight <= wrapperElement.style.height) editorElement.style.height = editorHeight + 'px';
             if (editorWidth <= wrapperElement.style.width) editorElement.style.width = editorWidth + 'px';
             editorElement.style.opacity = '1';
@@ -87,6 +85,8 @@ function makeAceEditorResizable() {
             EDITOR.resize();
 
             window.draggingAceEditor[editorId] = false;
+
+            document.removeEventListener("mousemove", mousemoveAction);
         }
     };
 
