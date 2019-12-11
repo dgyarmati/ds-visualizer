@@ -52,4 +52,5 @@ TODO
     - check event listeners
     - add console
     - option to minimize/close console; minimize editor window
+    - add tooltip text to resize
     add: Point class
