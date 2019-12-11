@@ -9,7 +9,7 @@
 }
 
 .appEditorWrapper {
-    margin: 1vh 1vh 2vh 1vw;
+    margin: 1vh 0 0 1vw;
     padding-top: 2vh;
     padding-bottom: 2vh;
     position: absolute;
@@ -40,20 +40,21 @@
 }
 
 .executeButton {
-    color: #0099CC;
+    color: #5DBCD2;
+    border: 2px solid #5DBCD2;
     background: transparent;
-    border: 2px solid #0099CC;
     border-radius: 6px;
     padding: 0.5vw 2vh;
     text-align: center;
     display: inline-block;
     font-size: 0.7vw;
-    margin: 4px 2px;
+    margin-top: 1vh;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
     text-decoration: none;
     text-transform: uppercase;
+    float: right;
 }
 
 .executeButton:hover {
