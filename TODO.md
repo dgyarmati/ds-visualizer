@@ -50,4 +50,6 @@ TODO
     - prevent text selection in button
     - closeable tutorial button
     - check event listeners
+    - add console
+    - option to minimize/close console; minimize editor window
     add: Point class
