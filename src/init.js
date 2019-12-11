@@ -27,7 +27,9 @@ function makeAceEditorResizable() {
         event.preventDefault();
 
         window.draggingAceEditor[editorId] = true;
-        document.getElementById(editorId).style.opacity = '0';
+        editorElement.style.opacity = '0';
+
+        editorButton.style.display = 'none';
 
         document.addEventListener("mousemove", mousemoveAction);
     };
