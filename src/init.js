@@ -10,71 +10,77 @@ function makeAceEditorResizable() {
     const editorId = EDITOR.container.id;
     const dragbarId = editorId + 'Dragbar';
     const wrapperElementId = editorId + 'Wrapper';
+    const editorButtonId = 'editorButton';
+
+    const editorElement = document.getElementById(editorId);
+    const wrapperElement = document.getElementById(wrapperElementId);
+    const dragbarElement = document.getElementById(dragbarId);
+    const editorButton = document.getElementById(editorButtonId);
+
+    const editorBounds = editorElement.getBoundingClientRect();
 
     const offset = 0;
-
     window.draggingAceEditor[editorId] = false;
 
     let mousedownAction = function (event) {
+
         event.preventDefault();
 
         window.draggingAceEditor[editorId] = true;
-
         document.getElementById(editorId).style.opacity = '0';
 
         document.addEventListener("mousemove", mousemoveAction);
     };
 
     let mousemoveAction = function (event) {
-        let editorElement = document.getElementById(editorId);
-        let editorBounds = editorElement.getBoundingClientRect();
 
-        let resolution = {
+        const resolution = {
             top: editorBounds.top + document.body.scrollTop
         };
 
-        let topOffset = resolution.top - offset;
+        const topOffset = resolution.top - offset;
 
-        let actualY = event.pageY - offset;
-        let actualX = event.pageX + offset;
+        const actualY = event.pageY - offset;
+        const actualX = event.pageX + offset;
 
-        let editorHeight = actualY - topOffset;
-        let editorWidth = actualX + topOffset;
+        const editorHeight = actualY - topOffset;
+        const editorWidth = actualX + topOffset;
 
-        document.getElementById(wrapperElementId).style.height = editorHeight + "px";
-        document.getElementById(wrapperElementId).style.width = editorWidth + "px";
+        wrapperElement.style.height = editorHeight + 'px';
+        wrapperElement.style.width = editorWidth + 'px';
 
-        document.getElementById(dragbarId).style.opacity = '0.15';
+        editorButton.style.display = 'none';
+
+        dragbarElement.style.opacity = '0.15';
     };
 
     document.getElementById(dragbarId).addEventListener("mousedown", mousedownAction);
 
     let mouseupAction = function (event) {
         if (window.draggingAceEditor[editorId]) {
-            let editorElement = document.getElementById(editorId);
 
-            let editorBounds = editorElement.getBoundingClientRect();
-
-            let resolution = {
+            const resolution = {
                 top: editorBounds.top + document.body.scrollTop
             };
 
-            let actualY = event.pageY - offset;
-            let actualX = event.pageX + offset;
+            const actualY = event.pageY - offset;
+            const actualX = event.pageX + offset;
 
-            let topOffset = resolution.top - offset;
-            let sideOffset = resolution.top + offset;
+            const topOffset = resolution.top - offset;
+            const sideOffset = resolution.top + offset;
 
-            let editorHeight = actualY - topOffset;
-            let editorWidth = actualX + sideOffset;
+            const editorHeight = actualY - topOffset;
+            const editorWidth = actualX + sideOffset;
 
             document.removeEventListener("mousemove", mousemoveAction);
 
-            document.getElementById(dragbarId).style.opacity = '1';
-
-            editorElement.style.height = editorHeight + "px";
-            editorElement.style.width = editorWidth + "px";
+            editorElement.style.height = editorHeight + 'px';
+            editorElement.style.width = editorWidth + 'px';
             editorElement.style.opacity = '1';
+
+            editorButton.style.display = 'block';
+
+            dragbarElement.style.opacity = '1';
 
             EDITOR.resize();
 

@@ -47,4 +47,7 @@ TODO
     - move button with resize
     - bug: smaller screens wrong resolution
     - bug: resize part moves to the wrong place at window resize
+    - prevent text selection in button
+    - closeable tutorial button
+    - bug: clicking on drag element makes editor expand
     add: Point class
