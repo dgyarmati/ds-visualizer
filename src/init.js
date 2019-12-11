@@ -115,7 +115,7 @@ function clearCanvas() {
 }
 
 function init() {
-    EDITOR.setValue(DEFAULT_TEXT);
+    EDITOR.setValue(DEFAULT_TEXT, 1);
     executeInput();
 }
 

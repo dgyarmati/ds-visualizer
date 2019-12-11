@@ -42,4 +42,5 @@ TODO
     - json tree
     - option to rotate tree
     - remove ace files
+    - resize to longest line button + stylings
     add: Point class
