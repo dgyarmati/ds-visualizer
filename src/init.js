@@ -1,110 +1,113 @@
-const editor = ace.edit("editor");
-editor.setTheme("ace/theme/solarized_light");
-editor.session.setMode("ace/mode/javascript");
-editor.resize();
-editor.setOptions({
-    fontSize: "10pt",
-    selectionStyle: "text",
-    showPrintMargin: false,
-});
+// setup ACE EDITOR
 
 /**
- * VanillaJS version to make ace editor vertically resizable.
+ * Function to make ace EDITOR resizable by dragging.
  *
- * @param editor Ace Editor instance.
+ * @param EDITOR Ace Editor instance.
  */
 
-window.draggingAceEditor = {};
+function makeAceEditorResizable() {
+    window.draggingAceEditor = {};
 
-function makeAceEditorResizable(editor) {
-    let id_editor = editor.container.id;
-    let id_dragbar = id_editor + '_dragbar';
-    let id_wrapper = id_editor + '_wrapper';
-    let wpoffset = 0;
-    window.draggingAceEditor[id_editor] = false;
+    const editorId = EDITOR.container.id;
+    const dragbarId = editorId + '_dragbar';
+    const wrapperElementId = editorId + '_wrapper';
 
-    let action_mousedown = function (e) {
+    const offset = 0;
+
+    window.draggingAceEditor[editorId] = false;
+
+    let mousedownAction = function (e) {
         e.preventDefault();
 
-        window.draggingAceEditor[id_editor] = true;
+        window.draggingAceEditor[editorId] = true;
 
-        // Set editor opacity to 0 to make transparent so our wrapper div shows
-        document.getElementById(id_editor).style.opacity = '0';
+        document.getElementById(editorId).style.opacity = '0';
 
-        document.addEventListener("mousemove", action_document_mousemove);
+        document.addEventListener("mousemove", mousemoveAction);
     };
 
-    let action_document_mousemove = function (e) {
-        let _editor = document.getElementById(id_editor);
-        let rect = _editor.getBoundingClientRect();
+    let mousemoveAction = function (e) {
+        let editor = document.getElementById(editorId);
+        let editorBounds = editor.getBoundingClientRect();
 
-        let rsl = {
-            top: rect.top + document.body.scrollTop
+        let resolution = {
+            top: editorBounds.top + document.body.scrollTop
         };
 
-        let top_offset = rsl.top - wpoffset;
+        let topOffset = resolution.top - offset;
 
-        let actualY = e.pageY - wpoffset;
-        let actualX = e.pageX + wpoffset;
+        let actualY = e.pageY - offset;
+        let actualX = e.pageX + offset;
 
-        // editor height
-        let eheight = actualY - top_offset;
-        let ewidth = actualX + top_offset;
+        let editorHeight = actualY - topOffset;
+        let editorWidth = actualX + topOffset;
 
-        // Set wrapper height
-        document.getElementById(id_wrapper).style.height = eheight + "px";
-        document.getElementById(id_wrapper).style.width = ewidth + "px";
+        document.getElementById(wrapperElementId).style.height = editorHeight + "px";
+        document.getElementById(wrapperElementId).style.width = editorWidth + "px";
 
-        // Set dragbar opacity while dragging (set to 0 to not show)
-        document.getElementById(id_dragbar).style.opacity = '0.15';
+        document.getElementById(dragbarId).style.opacity = '0.15';
     };
 
-    document.getElementById(id_dragbar).addEventListener("mousedown", action_mousedown);
+    document.getElementById(dragbarId).addEventListener("mousedown", mousedownAction);
 
-    let action_mouseup = function (e) {
-        if (window.draggingAceEditor[id_editor]) {
-            let ctx_editor = document.getElementById(id_editor);
+    let mouseupAction = function (e) {
+        if (window.draggingAceEditor[editorId]) {
+            let editor = document.getElementById(editorId);
 
-            let rect = ctx_editor.getBoundingClientRect();
+            let editorBounds = editor.getBoundingClientRect();
 
-            let rsl = {
-                top: rect.top + document.body.scrollTop
+            let resolution = {
+                top: editorBounds.top + document.body.scrollTop
             };
 
-            let actualY = e.pageY - wpoffset;
-            let actualX = e.pageX + wpoffset;
-            let top_offset = rsl.top - wpoffset;
-            let side_offset = rsl.top + wpoffset;
-            let eheight = actualY - top_offset;
-            let ewidth = actualX + side_offset;
+            let actualY = e.pageY - offset;
+            let actualX = e.pageX + offset;
 
-            document.removeEventListener("mousemove", action_document_mousemove);
+            let topOffset = resolution.top - offset;
+            let sideOffset = resolution.top + offset;
 
-            // Set dragbar opacity back to 1
-            document.getElementById(id_dragbar).style.opacity = '1';
+            let editorHeight = actualY - topOffset;
+            let editorWidth = actualX + sideOffset;
 
-            // Set height on actual editor element, and opacity back to 1
-            ctx_editor.style.height = eheight + "px";
-            ctx_editor.style.width = ewidth + "px";
-            ctx_editor.style.opacity = '1';
+            document.removeEventListener("mousemove", mousemoveAction);
 
-            // Trigger ace editor resize()
+            document.getElementById(dragbarId).style.opacity = '1';
+
+            editor.style.height = editorHeight + "px";
+            editor.style.width = editorWidth + "px";
+            editor.style.opacity = '1';
+
             editor.resize();
 
-            window.draggingAceEditor[id_editor] = false;
+            window.draggingAceEditor[editorId] = false;
         }
     };
 
-    document.addEventListener("mouseup", action_mouseup);
+    document.addEventListener("mouseup", mouseupAction);
 }
 
-makeAceEditorResizable(editor);
+function setupCodeEditor() {
+    EDITOR.setTheme("ace/theme/solarized_light");
+    EDITOR.session.setMode("ace/mode/javascript");
+    EDITOR.resize();
+
+    EDITOR.setOptions({
+        fontSize: "10pt",
+        selectionStyle: "text",
+        showPrintMargin: false,
+    });
+
+    makeAceEditorResizable();
+}
+
+setupCodeEditor();
 
 // reading user input and attempting to parse it as JS code, creating a tree
 function executeInput() {
     NODE_COORDINATES.clear();
     clearCanvas();
-    const code = editor.getValue();
+    const code = EDITOR.getValue();
     const func = new Function(code);
     func();
 }
@@ -114,7 +117,7 @@ function clearCanvas() {
 }
 
 function init() {
-    editor.setValue(DEFAULT_TEXT);
+    EDITOR.setValue(DEFAULT_TEXT);
     executeInput();
 }
 

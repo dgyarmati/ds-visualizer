@@ -3,6 +3,8 @@ const NODE_COORDINATES = new Map();    // stores the nodes and their coordinates
 const CANVAS = document.getElementById("nodes");
 const CONTEXT = CANVAS.getContext('2d');
 
+const EDITOR = ace.edit("editor");
+
 CANVAS.width = window.innerWidth - 30;
 CANVAS.height = window.innerHeight;
 
