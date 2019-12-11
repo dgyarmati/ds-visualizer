@@ -6,7 +6,7 @@ const CONTEXT = CANVAS.getContext('2d');
 const EDITOR = ace.edit("editor");
 
 CANVAS.width = window.innerWidth - 30;
-CANVAS.height = window.innerHeight;
+CANVAS.height = window.innerHeight - 20;
 
 const X = Math.floor(CANVAS.width / 2);
 const Y = Math.floor(CANVAS.height / 6);
