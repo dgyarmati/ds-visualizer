@@ -26,8 +26,8 @@ function makeAceEditorResizable() {
     };
 
     let mousemoveAction = function (event) {
-        let editor = document.getElementById(editorId);
-        let editorBounds = editor.getBoundingClientRect();
+        let editorElement = document.getElementById(editorId);
+        let editorBounds = editorElement.getBoundingClientRect();
 
         let resolution = {
             top: editorBounds.top + document.body.scrollTop
@@ -51,9 +51,9 @@ function makeAceEditorResizable() {
 
     let mouseupAction = function (event) {
         if (window.draggingAceEditor[editorId]) {
-            let editor = document.getElementById(editorId);
+            let editorElement = document.getElementById(editorId);
 
-            let editorBounds = editor.getBoundingClientRect();
+            let editorBounds = editorElement.getBoundingClientRect();
 
             let resolution = {
                 top: editorBounds.top + document.body.scrollTop
@@ -72,11 +72,11 @@ function makeAceEditorResizable() {
 
             document.getElementById(dragbarId).style.opacity = '1';
 
-            editor.style.height = editorHeight + "px";
-            editor.style.width = editorWidth + "px";
-            editor.style.opacity = '1';
+            editorElement.style.height = editorHeight + "px";
+            editorElement.style.width = editorWidth + "px";
+            editorElement.style.opacity = '1';
 
-            editor.resize();
+            EDITOR.resize();
 
             window.draggingAceEditor[editorId] = false;
         }
