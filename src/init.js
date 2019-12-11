@@ -1,24 +1,22 @@
-// setup ACE EDITOR
+// setup ACE editor
 
 /**
- * Function to make ace EDITOR resizable by dragging.
- *
- * @param EDITOR Ace Editor instance.
+ * Function to make ace editor resizable by dragging.
  */
 
 function makeAceEditorResizable() {
     window.draggingAceEditor = {};
 
     const editorId = EDITOR.container.id;
-    const dragbarId = editorId + '_dragbar';
-    const wrapperElementId = editorId + '_wrapper';
+    const dragbarId = editorId + 'Dragbar';
+    const wrapperElementId = editorId + 'Wrapper';
 
     const offset = 0;
 
     window.draggingAceEditor[editorId] = false;
 
-    let mousedownAction = function (e) {
-        e.preventDefault();
+    let mousedownAction = function (event) {
+        event.preventDefault();
 
         window.draggingAceEditor[editorId] = true;
 
@@ -27,7 +25,7 @@ function makeAceEditorResizable() {
         document.addEventListener("mousemove", mousemoveAction);
     };
 
-    let mousemoveAction = function (e) {
+    let mousemoveAction = function (event) {
         let editor = document.getElementById(editorId);
         let editorBounds = editor.getBoundingClientRect();
 
@@ -37,8 +35,8 @@ function makeAceEditorResizable() {
 
         let topOffset = resolution.top - offset;
 
-        let actualY = e.pageY - offset;
-        let actualX = e.pageX + offset;
+        let actualY = event.pageY - offset;
+        let actualX = event.pageX + offset;
 
         let editorHeight = actualY - topOffset;
         let editorWidth = actualX + topOffset;
@@ -51,7 +49,7 @@ function makeAceEditorResizable() {
 
     document.getElementById(dragbarId).addEventListener("mousedown", mousedownAction);
 
-    let mouseupAction = function (e) {
+    let mouseupAction = function (event) {
         if (window.draggingAceEditor[editorId]) {
             let editor = document.getElementById(editorId);
 
@@ -61,8 +59,8 @@ function makeAceEditorResizable() {
                 top: editorBounds.top + document.body.scrollTop
             };
 
-            let actualY = e.pageY - offset;
-            let actualX = e.pageX + offset;
+            let actualY = event.pageY - offset;
+            let actualX = event.pageX + offset;
 
             let topOffset = resolution.top - offset;
             let sideOffset = resolution.top + offset;
