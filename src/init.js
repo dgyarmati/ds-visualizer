@@ -85,6 +85,12 @@ function makeAceEditorResizable() {
     document.addEventListener("mouseup", mouseupAction);
 }
 
+function getLengthOfLongestLine(text) {
+    return text.split('\n')
+        .reduce((a, b) => a.length > b.length ? a : b)
+        .length;
+}
+
 function setupCodeEditor() {
     EDITOR.setTheme("ace/theme/solarized_light");
     EDITOR.session.setMode("ace/mode/javascript");
@@ -94,7 +100,12 @@ function setupCodeEditor() {
         fontSize: "10pt",
         selectionStyle: "text",
         showPrintMargin: false,
+        // maxLines: getLengthOfLongestLine(DEFAULT_CODE),
     });
+
+    const editorId = EDITOR.container.id;
+    const wrapperElementId = editorId + 'Wrapper';
+    // document.getElementById(wrapperElementId).style.width = getLengthOfLongestLine(DEFAULT_CODE) + "pc";
 
     makeAceEditorResizable();
 }
@@ -115,7 +126,7 @@ function clearCanvas() {
 }
 
 function init() {
-    EDITOR.setValue(DEFAULT_TEXT, 1);
+    EDITOR.setValue(DEFAULT_CODE, 1);
     executeInput();
 }
 

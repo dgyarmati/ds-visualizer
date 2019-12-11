@@ -15,7 +15,7 @@ const CHANGE_Y = 70;
 
 let TREE = null;
 
-const DEFAULT_TEXT =
+const DEFAULT_CODE =
     'class Node {\n' +
     '    constructor(data) {\n' +
     '        this.data = data;\n' +

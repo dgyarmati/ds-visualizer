@@ -43,4 +43,8 @@ TODO
     - option to rotate tree
     - remove ace files
     - resize to longest line button + stylings
+    - add drag icon to nodes
+    - move button with resize
+    - bug: smaller screens wrong resolution
+    - bug: resize part moves to the wrong place at window resize
     add: Point class
