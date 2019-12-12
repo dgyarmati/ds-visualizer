@@ -13,9 +13,14 @@ const Y = Math.floor(CANVAS.height / 6);
 const CHANGE_X = 50;
 const CHANGE_Y = 70;
 
+const NODE_RADIUS = 22;
+
+const NODE_STROKE_WIDTH = 2;
 const DEFAULT_NODE_COLOR = '#5DBCD2';
 const ACTIVE_NODE_COLOR = '#5DBCD2';
+
 const EDGE_COLOR = '#BEBDB1';
+const EDGE_STROKE_WIDTH = 2;
 
 let TREE = null;
 

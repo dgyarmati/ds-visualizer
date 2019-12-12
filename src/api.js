@@ -149,6 +149,7 @@ function changeCoordinatesForDefaultTree(matrix) {
 
 function drawTree() {
     CONTEXT.strokeStyle = DEFAULT_NODE_COLOR;
+    CONTEXT.lineWidth = NODE_STROKE_WIDTH;
     NODE_COORDINATES.forEach((coords, node) => {
         drawCircle(coords.x, coords.y, node.data);
     });
@@ -163,7 +164,7 @@ function drawTree() {
  */
 function drawCircle(x, y, data) {
     CONTEXT.beginPath();
-    CONTEXT.arc(x, y, 20, 0, 2 * Math.PI);
+    CONTEXT.arc(x, y, NODE_RADIUS, 0, 2 * Math.PI);
     CONTEXT.stroke();
     CONTEXT.fillText(data, x, y);
 }
@@ -175,7 +176,9 @@ function drawCircle(x, y, data) {
  */
 function connectNodes(tree) {
     let nodes = [tree.root];
+
     CONTEXT.strokeStyle = EDGE_COLOR;
+    CONTEXT.lineWidth = EDGE_STROKE_WIDTH;
 
     while (nodes.length) {
         let node = nodes.shift();
@@ -184,8 +187,8 @@ function connectNodes(tree) {
         node.children.forEach((node) => {
             let target = NODE_COORDINATES.get(node);
 
-            let originVector = findIntersect(new Vector(target.x, target.y), new Vector(origin.x, origin.y), 20);
-            let targetVector = findIntersect(new Vector(origin.x, origin.y), new Vector(target.x, target.y), 20);
+            let originVector = findIntersect(new Vector(target.x, target.y), new Vector(origin.x, origin.y), NODE_RADIUS);
+            let targetVector = findIntersect(new Vector(origin.x, origin.y), new Vector(target.x, target.y), NODE_RADIUS);
 
             drawLine(originVector, targetVector)
         });

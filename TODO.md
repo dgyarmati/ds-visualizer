@@ -53,4 +53,7 @@ TODO
     - add console
     - option to minimize/close console; minimize editor window
     - add tooltip text to resize
+    - set tree in middle
+    - scale node placement to radius?
+    - color and align node text
     add: Point class
