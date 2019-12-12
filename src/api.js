@@ -148,6 +148,7 @@ function changeCoordinatesForDefaultTree(matrix) {
 }
 
 function drawTree() {
+    CONTEXT.strokeStyle = DEFAULT_NODE_COLOR;
     NODE_COORDINATES.forEach((coords, node) => {
         drawCircle(coords.x, coords.y, node.data);
     });
@@ -174,6 +175,7 @@ function drawCircle(x, y, data) {
  */
 function connectNodes(tree) {
     let nodes = [tree.root];
+    CONTEXT.strokeStyle = EDGE_COLOR;
 
     while (nodes.length) {
         let node = nodes.shift();
