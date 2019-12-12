@@ -56,4 +56,6 @@ TODO
     - set tree in middle
     - scale node placement to radius?
     - color and align node text
+    - reset stuff on window resize
+    - prevent font overflow
     add: Point class

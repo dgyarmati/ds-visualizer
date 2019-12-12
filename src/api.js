@@ -150,6 +150,10 @@ function changeCoordinatesForDefaultTree(matrix) {
 function drawTree() {
     CONTEXT.strokeStyle = DEFAULT_NODE_COLOR;
     CONTEXT.lineWidth = NODE_STROKE_WIDTH;
+    CONTEXT.font = NODE_FONT;
+    CONTEXT.textBaseline = 'middle';
+    CONTEXT.textAlign = 'center';
+
     NODE_COORDINATES.forEach((coords, node) => {
         drawCircle(coords.x, coords.y, node.data);
     });
