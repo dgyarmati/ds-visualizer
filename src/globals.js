@@ -18,7 +18,7 @@ const NODE_RADIUS = 22;
 const NODE_STROKE_WIDTH = 2;
 const DEFAULT_NODE_COLOR = '#5DBCD2';
 const ACTIVE_NODE_COLOR = '#5DBCD2';
-const NODE_FONT = '1vw bold Roboto';
+const NODE_FONT = 'bold 15px Courier New';
 
 const EDGE_COLOR = '#BEBDB1';
 const EDGE_STROKE_WIDTH = 2;
