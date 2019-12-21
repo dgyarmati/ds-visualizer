@@ -10,3 +10,6 @@
 8. button should change wrapper color, other button color, node and canvas color as well
 9. remove rectangular select around button at clicking
 10. bug: resize bar does not change color
+
+- remove unnecessary library code
+- define constants
