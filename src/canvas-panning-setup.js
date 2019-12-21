@@ -18,7 +18,7 @@ let panAttr = {
     },
 };
 
-CANVAS.addEventListener("mousedown", startPan);
+CANVAS.addEventListener('mousedown', startPan);
 
 function pan() {
     CONTEXT.setTransform(1, 0, 0, 1, 0, 0);
@@ -28,17 +28,17 @@ function pan() {
 }
 
 function startPan(e) {
-    window.addEventListener("mousemove", trackMouse);
-    window.addEventListener("mousemove", pan);
-    window.addEventListener("mouseup", endPan);
+    window.addEventListener('mousemove', trackMouse);
+    window.addEventListener('mousemove', pan);
+    window.addEventListener('mouseup', endPan);
     panAttr.start.x = e.clientX;
     panAttr.start.y = e.clientY;
 }
 
 function endPan(e) {
-    window.removeEventListener("mousemove", trackMouse);
-    window.removeEventListener("mousemove", pan);
-    window.removeEventListener("mouseup", endPan);
+    window.removeEventListener('mousemove', trackMouse);
+    window.removeEventListener('mousemove', pan);
+    window.removeEventListener('mouseup', endPan);
     panAttr.start.x = null;
     panAttr.start.y = null;
     globalPanAttr.offset.x = panAttr.offset.x;
