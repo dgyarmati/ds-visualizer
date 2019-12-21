@@ -3,7 +3,6 @@
 /**
  * Function to make ace editor resizable by dragging.
  */
-
 function makeAceEditorResizable() {
     window.draggingAceEditor = {};
 
@@ -31,7 +30,7 @@ function makeAceEditorResizable() {
 
         editorButton.style.display = 'none';
 
-        document.addEventListener("mousemove", mousemoveAction);
+        document.addEventListener('mousemove', mousemoveAction);
     };
 
     let mousemoveAction = function (event) {
@@ -56,7 +55,7 @@ function makeAceEditorResizable() {
         dragbarElement.style.opacity = '0.15';
     };
 
-    dragbarElement.addEventListener("mousedown", mousedownAction);
+    dragbarElement.addEventListener('mousedown', mousedownAction);
 
     let mouseupAction = function (event) {
         if (window.draggingAceEditor[editorId]) {
@@ -86,11 +85,11 @@ function makeAceEditorResizable() {
 
             window.draggingAceEditor[editorId] = false;
 
-            document.removeEventListener("mousemove", mousemoveAction);
+            document.removeEventListener('mousemove', mousemoveAction);
         }
     };
 
-    document.addEventListener("mouseup", mouseupAction);
+    document.addEventListener('mouseup', mouseupAction);
 }
 
 function getLengthOfLongestLine(text) {
@@ -100,19 +99,19 @@ function getLengthOfLongestLine(text) {
 }
 
 function setupCodeEditor() {
-    EDITOR.setTheme("ace/theme/solarized_light");
-    EDITOR.session.setMode("ace/mode/javascript");
+    EDITOR.setTheme(EDITOR_LIGHT_THEME);
+    EDITOR.session.setMode('ace/mode/javascript');
     EDITOR.resize();
 
     EDITOR.setOptions({
-        fontSize: "10pt",
-        selectionStyle: "text",
+        fontSize: '10pt',
+        selectionStyle: 'text',
         showPrintMargin: false,
     });
 
     const editorId = EDITOR.container.id;
     const wrapperElementId = editorId + 'Wrapper';
-    document.getElementById(wrapperElementId).style.width = (getLengthOfLongestLine(DEFAULT_CODE) + 4) + "ch";
+    document.getElementById(wrapperElementId).style.width = (getLengthOfLongestLine(DEFAULT_CODE) + 4) + 'ch';
 
     makeAceEditorResizable();
 }
@@ -135,6 +134,10 @@ function clearCanvas() {
 function init() {
     EDITOR.setValue(DEFAULT_CODE, 1);
     executeInput();
+}
+
+function changeTheme() {
+    EDITOR_LIGHT_THEME === EDITOR.getTheme() ? EDITOR.setTheme(EDITOR_DARK_THEME) : EDITOR.setTheme(EDITOR_LIGHT_THEME);
 }
 
 init();

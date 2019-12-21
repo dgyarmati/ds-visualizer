@@ -1,9 +1,11 @@
 const NODE_COORDINATES = new Map();    // stores the nodes and their coordinates to be drawn at; example: [node: {x: 0, y: 2}]
 
-const CANVAS = document.getElementById("nodes");
+const CANVAS = document.getElementById('nodes');
 const CONTEXT = CANVAS.getContext('2d');
 
-const EDITOR = ace.edit("editor");
+const EDITOR = ace.edit('editor');
+const EDITOR_LIGHT_THEME = 'ace/theme/solarized_light';
+const EDITOR_DARK_THEME = 'ace/theme/dracula';
 
 CANVAS.width = window.innerWidth - 30;
 CANVAS.height = window.innerHeight - 20;
