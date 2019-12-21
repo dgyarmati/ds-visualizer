@@ -68,3 +68,11 @@
     color: white;
 }
 
+.themeChangeButton {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: #000000;
+    cursor: pointer;
+}
+
