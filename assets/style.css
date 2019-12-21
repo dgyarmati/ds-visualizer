@@ -61,6 +61,7 @@
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     z-index: 10;
+    outline: none;
 }
 
 .executeButton:hover {
@@ -72,8 +73,9 @@
     height: 1.5vw;
     width: 1.5vw;
     border-radius: 50%;
-    background: #3C4049;
+    background: #282A36;
     cursor: pointer;
     border: none;
+    outline: none;
 }
 
