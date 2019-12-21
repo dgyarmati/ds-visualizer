@@ -137,7 +137,13 @@ function init() {
 }
 
 function changeTheme() {
-    EDITOR_LIGHT_THEME === EDITOR.getTheme() ? EDITOR.setTheme(EDITOR_DARK_THEME) : EDITOR.setTheme(EDITOR_LIGHT_THEME);
+    if (EDITOR_LIGHT_THEME === EDITOR.getTheme()) {
+        EDITOR.setTheme(EDITOR_DARK_THEME);
+        document.getElementById('themeButton').style.backgroundColor = '#FCF7E3';
+    } else {
+        EDITOR.setTheme(EDITOR_LIGHT_THEME);
+        document.getElementById('themeButton').style.backgroundColor = '#3C4049';
+    }
 }
 
 init();
