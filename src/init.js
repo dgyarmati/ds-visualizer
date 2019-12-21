@@ -137,7 +137,21 @@ function init() {
 }
 
 function changeTheme() {
-    EDITOR_LIGHT_THEME === EDITOR.getTheme() ? EDITOR.setTheme(EDITOR_DARK_THEME) : EDITOR.setTheme(EDITOR_LIGHT_THEME);
+    if (EDITOR_LIGHT_THEME === EDITOR.getTheme()) {
+        EDITOR.setTheme(EDITOR_DARK_THEME);
+        document.getElementById('themeButton').style.backgroundColor = '#FCF7E3';
+        document.getElementById('editorWrapper').style.backgroundColor = '#282A36';
+        document.getElementById('editorDragbar').style.backgroundColor = '#282A36';
+        document.body.style.background = '#1F232C';
+    } else {
+        EDITOR.setTheme(EDITOR_LIGHT_THEME);
+        document.getElementById('themeButton').style.backgroundColor = '#282A36';
+        document.getElementById('editorWrapper').style.backgroundColor = '#FCF7E3';
+        document.getElementById('editorDragbar').style.backgroundColor = '#FCF7E3';
+        document.body.style.background = '#F7F7F7';
+    }
 }
+
+document.body.style.background = '#F7F7F7';
 
 init();
