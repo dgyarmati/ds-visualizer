@@ -9,7 +9,7 @@ CANVAS.width = window.innerWidth - 30;
 CANVAS.height = window.innerHeight - 20;
 
 const X = Math.floor(CANVAS.width / 1.5);
-const Y = Math.floor(CANVAS.height / 6);
+const Y = Math.floor(CANVAS.height / 3);
 const CHANGE_X = 50;
 const CHANGE_Y = 70;
 
