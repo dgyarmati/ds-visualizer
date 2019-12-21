@@ -148,10 +148,10 @@ function changeTheme() {
         document.getElementById('themeButton').style.backgroundColor = '#282A36';
         document.getElementById('editorWrapper').style.backgroundColor = '#FCF7E3';
         document.getElementById('editorDragbar').style.backgroundColor = '#FCF7E3';
-        document.body.style.background = '#f7f7f7';
+        document.body.style.background = '#F7F7F7';
     }
 }
 
-document.body.style.background = '#f7f7f7';
+document.body.style.background = '#F7F7F7';
 
 init();
