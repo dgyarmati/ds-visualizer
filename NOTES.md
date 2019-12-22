@@ -13,3 +13,10 @@
 
 - remove unnecessary library code
 - define constants
+
+- error handling
+- editor dragging
+- scrollbar
+- help menu - mention github as well!
+- keybinding?
+- console
