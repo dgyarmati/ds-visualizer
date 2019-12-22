@@ -153,6 +153,7 @@ function drawTree() {
     CONTEXT.font = NODE_FONT;
     CONTEXT.textBaseline = 'middle';
     CONTEXT.textAlign = 'center';
+    CONTEXT.fillStyle = CURRENT_FONT_COLOR;
 
     NODE_COORDINATES.forEach((coords, node) => {
         drawCircle(coords.x, coords.y, node.data);
