@@ -12,4 +12,5 @@
 
 - server deployment
 - ci pipeline
+- git cleanup
 - learning
