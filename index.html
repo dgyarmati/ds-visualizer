@@ -12,8 +12,17 @@
         <div id="editor" class="appEditor"></div>
         <div id="editorDragbar" class="appEditorDragbar">
         </div>
-        <p><button title="run code" onclick="executeInput()" type="button" id="editorButton" class="runButton">Run</button></p>
-        <p><button title="switch theme" onclick="changeTheme()" type="button" id="themeButton" class="themeChangeButton"></button></p>
+        <div class="menu" id="menuBar">
+            <button title="help" type="button" id="helpButton" class="showHelpButton"></button>
+            <button title="show console" type="button" id="consoleButton" class="showConsoleButton"></button>
+            <button title="switch theme" onclick="changeTheme()" type="button" id="themeButton" class="themeChangeButton"></button>
+            <label title="select data structure" class="dsSelector">
+                <select>
+                    <option value="tree">Tree</option>
+                </select>
+            </label>
+            <button title="run code" onclick="executeInput()" type="button" id="editorButton" class="runButton">Run</button>
+        </div>
     </div>
     <canvas id="nodes"></canvas>
 </div>

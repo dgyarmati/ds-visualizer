@@ -39,6 +39,10 @@
     border-color: transparent #C8C8C8 #C8C8C8 transparent;
 }
 
+.menu {
+    margin-top: 2vh;
+}
+
 .runButton {
     color: #5DBCD2;
     border: 2px solid #5DBCD2;
@@ -78,5 +82,38 @@
     border: none;
     outline: none;
     margin-top: 1vh;
+    margin-left: 1vh;
+    float: left;
+}
+
+.showHelpButton {
+    height: 1.5vw;
+    width: 1.5vw;
+    border-radius: 50%;
+    border: 2px solid black;
+    background: #FFFFFF;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    float: left;
+}
+
+.showConsoleButton {
+    height: 1.5vw;
+    width: 1.5vw;
+    border-radius: 50%;
+    border: 2px solid black;
+    background: #FFFFFF;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    float: left;
+}
+
+.dsSelector {
+    float: left;
+    margin-top: 1.5vh;
     margin-left: 1vh;
 }

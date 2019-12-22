@@ -9,12 +9,12 @@ function makeAceEditorResizable() {
     const editorId = EDITOR.container.id;
     const dragbarId = editorId + 'Dragbar';
     const wrapperElementId = editorId + 'Wrapper';
-    const editorButtonId = 'editorButton';
+    const menuBarId = 'menuBar';
 
     const editorElement = document.getElementById(editorId);
     const wrapperElement = document.getElementById(wrapperElementId);
     const dragbarElement = document.getElementById(dragbarId);
-    const editorButton = document.getElementById(editorButtonId);
+    const editorButton = document.getElementById(menuBarId);
 
     const editorBounds = editorElement.getBoundingClientRect();
 
