@@ -80,3 +80,29 @@
     margin-top: 1vh;
     margin-left: 1vh;
 }
+
+.showHelpButton {
+    height: 1.5vw;
+    width: 1.5vw;
+    border-radius: 50%;
+    border: 2px solid black;
+    background: #FFFFFF;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    float: left;
+}
+
+.showConsoleButton {
+    height: 1.5vw;
+    width: 1.5vw;
+    border-radius: 50%;
+    border: 2px solid black;
+    background: #FFFFFF;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    float: left;
+}

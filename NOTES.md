@@ -7,6 +7,7 @@
 - keybindings?
 - console
 - Point class
+- re-render stuff on resizing
 
 - debugger logic
 

@@ -12,8 +12,12 @@
         <div id="editor" class="appEditor"></div>
         <div id="editorDragbar" class="appEditorDragbar">
         </div>
-        <p><button title="run code" onclick="executeInput()" type="button" id="editorButton" class="runButton">Run</button></p>
-        <p><button title="switch theme" onclick="changeTheme()" type="button" id="themeButton" class="themeChangeButton"></button></p>
+        <div class="menu">
+            <p><button title="run code" onclick="executeInput()" type="button" id="editorButton" class="runButton">Run</button></p>
+            <p><button title="help" type="button" id="helpButton" class="showHelpButton"></button></p>
+            <p><button title="show console" type="button" id="consoleButton" class="showConsoleButton"></button></p>
+            <p><button title="switch theme" onclick="changeTheme()" type="button" id="themeButton" class="themeChangeButton"></button></p>
+        </div>
     </div>
     <canvas id="nodes"></canvas>
 </div>
