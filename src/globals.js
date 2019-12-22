@@ -21,6 +21,7 @@ const NODE_STROKE_WIDTH = 2;
 const DEFAULT_NODE_COLOR = '#5DBCD2';
 const ACTIVE_NODE_COLOR = '#5DBCD2';
 const NODE_FONT = 'bold 15px Courier New';
+let CURRENT_FONT_COLOR = '#000000';
 
 const EDGE_COLOR = '#BEBDB1';
 const EDGE_STROKE_WIDTH = 2;

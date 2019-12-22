@@ -143,12 +143,16 @@ function changeTheme() {
         document.getElementById('editorWrapper').style.backgroundColor = '#282A36';
         document.getElementById('editorDragbar').style.backgroundColor = '#282A36';
         document.body.style.background = '#1F232C';
+        CURRENT_FONT_COLOR = '#FFFFFF';
+        drawTree();
     } else {
         EDITOR.setTheme(EDITOR_LIGHT_THEME);
         document.getElementById('themeButton').style.backgroundColor = '#282A36';
         document.getElementById('editorWrapper').style.backgroundColor = '#FCF7E3';
         document.getElementById('editorDragbar').style.backgroundColor = '#FCF7E3';
         document.body.style.background = '#F7F7F7';
+        CURRENT_FONT_COLOR = '#000000';
+        drawTree();
     }
 }
 
