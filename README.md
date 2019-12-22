@@ -6,7 +6,7 @@ As of date, the debugger only supports non-binary trees, but there is more to co
 
 ##### How?
 
-Enter data structures and algorithms operating on them in a class implemented in JavaScript to the editor, and press `Run` for the visualization.
+Enter data structures and algorithms operating on them enclosed in a class implemented in JavaScript to the editor, and press `RUN` for the visualization.
 
 Different data structures use different APIs:
 
