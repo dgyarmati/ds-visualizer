@@ -1,6 +1,7 @@
 - error handling
 - ds selector dropdown
 - editor dragging
+- minimize and/or close
 - scrollbar
 - help menu - mention github as well!
 - keybindings?
