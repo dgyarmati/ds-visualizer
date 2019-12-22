@@ -11,4 +11,5 @@
 - debugger logic
 
 - server deployment
+- ci pipeline
 - learning
