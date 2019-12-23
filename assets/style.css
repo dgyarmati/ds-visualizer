@@ -113,14 +113,27 @@
 }
 
 .dsSelector {
-    margin-top: 1.5vh;
+    margin-top: 1.1vh;
     margin-left: 1vw;
     position: relative;
     display: inline-block;
     float: left;
 }
 
-.dropdown-content {
+.dsSelector-button {
+    color: #d2735d;
+    padding: 0.3vw 1vh;
+    font-size: 0.6vw;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 6px;
+    outline: none;
+    background: transparent;
+    border: 2px solid #d2735d;
+}
+
+.dsSelector-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -130,6 +143,6 @@
     z-index: 1;
 }
 
-.dsSelector:hover .dropdown-content {
+.dsSelector:hover .dsSelector-content {
     display: block;
 }

@@ -1,3 +1,10 @@
+- css naming conventions
+- order css by appearance in html
+- the theme switch button looks bigger in dark mode
+- make dark mode default
+- add note: best suited for larger screens
+- align buttons better to be in line with RUN
+
 - error handling
 - ds selector dropdown
 - editor dragging
@@ -15,3 +22,5 @@
 - ci pipeline
 - git cleanup
 - learning
+
+- small screen problem?
