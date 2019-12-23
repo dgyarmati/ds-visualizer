@@ -16,11 +16,12 @@
             <button title="help" type="button" id="helpButton" class="showHelpButton"></button>
             <button title="show console" type="button" id="consoleButton" class="showConsoleButton"></button>
             <button title="switch theme" onclick="changeTheme()" type="button" id="themeButton" class="themeChangeButton"></button>
-            <label title="select data structure" class="dsSelector">
-                <select>
-                    <option value="tree">Tree</option>
-                </select>
-            </label>
+            <div title="select data structure" class="dsSelector">
+                <button class="dsSelector-button">Data Structures</button>
+                <div class="dsSelector-content">
+                    <p class="ds">Tree</p>
+                </div>
+            </div>
             <button title="run code" onclick="executeInput()" type="button" id="editorButton" class="runButton">Run</button>
         </div>
     </div>

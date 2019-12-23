@@ -82,7 +82,7 @@
     border: none;
     outline: none;
     margin-top: 1vh;
-    margin-left: 1vh;
+    margin-left: 1vw;
     float: left;
 }
 
@@ -95,7 +95,7 @@
     cursor: pointer;
     outline: none;
     margin-top: 1vh;
-    margin-left: 1vh;
+    margin-left: 1vw;
     float: left;
 }
 
@@ -108,12 +108,53 @@
     cursor: pointer;
     outline: none;
     margin-top: 1vh;
-    margin-left: 1vh;
+    margin-left: 1vw;
     float: left;
 }
 
 .dsSelector {
+    margin-top: 1.1vh;
+    margin-left: 1vw;
+    position: relative;
+    display: inline-block;
     float: left;
-    margin-top: 1.5vh;
-    margin-left: 1vh;
+}
+
+.dsSelector-button {
+    color: #D2735D;
+    padding: 0.3vw 1vh;
+    font-size: 0.6vw;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 6px;
+    outline: none;
+    background: transparent;
+    border: 2px solid #D2735D;
+}
+
+.dsSelector-content {
+    display: none;
+    position: absolute;
+    background: transparent;
+    width: 6vw;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 0.3vw 1vh;
+    z-index: 1;
+    color: #D2735D;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.6vw;
+    margin: auto;
+    font-family: 'Arial', serif;
+}
+
+.ds {
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.dsSelector:hover .dsSelector-content {
+    display: flex;
 }
