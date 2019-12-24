@@ -99,8 +99,9 @@ function getLengthOfLongestLine(text) {
 }
 
 function setupCodeEditor() {
-    EDITOR.setTheme(EDITOR_LIGHT_THEME);
-    EDITOR.session.setMode('ace/mode/javascript');
+    EDITOR.setTheme(EDITOR_DARK_THEME);
+    setDarkThemeDefaults();
+    EDITOR.session.setMode(EDITOR_MODE);
     EDITOR.resize();
 
     EDITOR.setOptions({
@@ -115,8 +116,6 @@ function setupCodeEditor() {
 
     makeAceEditorResizable();
 }
-
-setupCodeEditor();
 
 // reading user input and attempting to parse it as JS code, creating a tree
 function executeInput() {
@@ -139,23 +138,34 @@ function init() {
 function changeTheme() {
     if (EDITOR_LIGHT_THEME === EDITOR.getTheme()) {
         EDITOR.setTheme(EDITOR_DARK_THEME);
-        document.getElementById('editor-wrapper').style.backgroundColor = '#282A36';
-        document.getElementById('editor-drag-bar').style.backgroundColor = '#282A36';
-        document.getElementById('theme-button').style.backgroundColor = '#FCF7E3';
-        document.body.style.background = '#1F232C';
-        CURRENT_FONT_COLOR = '#FFFFFF';
+        setDarkThemeDefaults();
         drawTree();
     } else {
         EDITOR.setTheme(EDITOR_LIGHT_THEME);
-        document.getElementById('editor-wrapper').style.backgroundColor = '#FCF7E3';
-        document.getElementById('editor-drag-bar').style.backgroundColor = '#FCF7E3';
-        document.getElementById('theme-button').style.backgroundColor = '#282A36';
-        document.body.style.background = '#F7F7F7';
-        CURRENT_FONT_COLOR = '#000000';
+        setLightThemeDefaults();
         drawTree();
     }
 }
 
+function setDarkThemeDefaults() {
+    document.getElementById('editor-wrapper').style.backgroundColor = '#282A36';
+    document.getElementById('editor-drag-bar').style.backgroundColor = '#282A36';
+    document.getElementById('theme-button').style.backgroundColor = '#FCF7E3';
+    document.body.style.background = '#1F232C';
+    CURRENT_FONT_COLOR = '#FFFFFF';
+}
+
+function setLightThemeDefaults() {
+    EDITOR.setTheme(EDITOR_LIGHT_THEME);
+    document.getElementById('editor-wrapper').style.backgroundColor = '#FCF7E3';
+    document.getElementById('editor-drag-bar').style.backgroundColor = '#FCF7E3';
+    document.getElementById('theme-button').style.backgroundColor = '#282A36';
+    document.body.style.background = '#F7F7F7';
+    CURRENT_FONT_COLOR = '#000000';
+}
+
 document.body.style.background = '#F7F7F7';
+
+setupCodeEditor();
 
 init();
