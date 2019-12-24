@@ -43,12 +43,11 @@
     height: 1.4vw;
     width: 1.4vw;
     border-radius: 50%;
-    border: 2px solid black;
     background: #FFFFFF;
     cursor: pointer;
     outline: none;
     margin-top: 1.8vh;
-    margin-left: 1vw;
+    margin-left: 2vw;
     float: left;
     user-select: none; /* supported by Chrome and Opera */
     -webkit-user-select: none; /* Safari */

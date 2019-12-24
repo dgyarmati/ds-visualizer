@@ -5,6 +5,7 @@
 - em and stuff
 - fix run button size
 - replace with vmax/vmin?
+- download only used fa icons
 
 - need help? - modal
 - error handling
