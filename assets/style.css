@@ -47,7 +47,7 @@
     background: #FFFFFF;
     cursor: pointer;
     outline: none;
-    margin-top: 1vh;
+    margin-top: 1.8vh;
     margin-left: 1vw;
     float: left;
     user-select: none; /* supported by Chrome and Opera */
@@ -65,7 +65,7 @@
     background: #FFFFFF;
     cursor: pointer;
     outline: none;
-    margin-top: 1vh;
+    margin-top: 1.8vh;
     margin-left: 1vw;
     float: left;
     user-select: none; /* supported by Chrome and Opera */
@@ -83,7 +83,7 @@
     cursor: pointer;
     border: none;
     outline: none;
-    margin-top: 1vh;
+    margin-top: 1.8vh;
     margin-left: 1vw;
     float: left;
     user-select: none; /* supported by Chrome and Opera */
@@ -94,7 +94,7 @@
 }
 
 .ds-selector {
-    margin-top: 1.1vh;
+    margin-top: 1.9vh;
     margin-left: 1vw;
     position: relative;
     display: inline-block;
