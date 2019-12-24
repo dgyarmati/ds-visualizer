@@ -35,10 +35,6 @@
     border-color: transparent #C8C8C8 #C8C8C8 transparent;
 }
 
-.menu {
-    margin-top: 2vh;
-}
-
 .show-help-button {
     height: 1.4vw;
     width: 1.4vw;
@@ -54,6 +50,19 @@
     -khtml-user-select: none; /* Konqueror HTML */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
+    position: relative;
+    font-size: 1.8vw;
+}
+.menu {
+    margin-top: 2vh;
+}
+
+
+.help-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .show-console-button {
