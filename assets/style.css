@@ -42,7 +42,6 @@
 .show-help-button {
     height: 1.4vw;
     width: 1.4vw;
-    border-radius: 50%;
     background: transparent;
     border: transparent;
     cursor: pointer;
@@ -70,7 +69,6 @@
 }
 
 .show-console-button {
-    border-radius: 50%;
     height: 1.4vw;
     width: 1.4vw;
     cursor: pointer;
@@ -102,9 +100,13 @@
     height: 1.6vw;
     width: 1.6vw;
     border-radius: 50%;
-    background: #FCF7E3;
+    background: linear-gradient(to right,
+    #282A36 0%,
+    #282A36 55%,
+    #FCF7E3 50%,
+    #FCF7E3 100%);
+    border: solid 1px #282A36;
     cursor: pointer;
-    border: none;
     outline: none;
     margin-top: 1.8vh;
     margin-left: 1vw;
@@ -127,14 +129,14 @@
 .ds-selector-button {
     color: #D2735D;
     padding: 0.3vw 1vh;
-    font-size: 0.6vw;
+    font-size: 0.7vw;
     cursor: pointer;
     text-decoration: none;
     text-transform: uppercase;
     border-radius: 6px;
     outline: none;
     background: transparent;
-    border: 2px solid #D2735D;
+    border: 1px solid #D2735D;
     user-select: none; /* supported by Chrome and Opera */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -153,7 +155,7 @@
     color: #D2735D;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 0.6vw;
+    font-size: 0.7vw;
     margin: auto;
     font-family: 'Arial', serif;
 }
