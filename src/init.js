@@ -7,13 +7,13 @@ function makeAceEditorResizable() {
     window.draggingAceEditor = {};
 
     const editorId = EDITOR.container.id;
-    const dragbarId = editorId + 'Dragbar';
-    const wrapperElementId = editorId + 'Wrapper';
-    const menuBarId = 'menuBar';
+    const dragBarId = editorId + '-drag-bar';
+    const wrapperElementId = editorId + '-wrapper';
+    const menuBarId = 'menu-bar';
 
     const editorElement = document.getElementById(editorId);
     const wrapperElement = document.getElementById(wrapperElementId);
-    const dragbarElement = document.getElementById(dragbarId);
+    const dragBarElement = document.getElementById(dragBarId);
     const editorButton = document.getElementById(menuBarId);
 
     const editorBounds = editorElement.getBoundingClientRect();
@@ -52,10 +52,10 @@ function makeAceEditorResizable() {
 
         editorButton.style.display = 'none';
 
-        dragbarElement.style.opacity = '0.15';
+        dragBarElement.style.opacity = '0.15';
     };
 
-    dragbarElement.addEventListener('mousedown', mousedownAction);
+    dragBarElement.addEventListener('mousedown', mousedownAction);
 
     let mouseupAction = function (event) {
         if (window.draggingAceEditor[editorId]) {
@@ -79,7 +79,7 @@ function makeAceEditorResizable() {
 
             editorButton.style.display = 'block';
 
-            dragbarElement.style.opacity = '1';
+            dragBarElement.style.opacity = '1';
 
             EDITOR.resize();
 
@@ -99,8 +99,9 @@ function getLengthOfLongestLine(text) {
 }
 
 function setupCodeEditor() {
-    EDITOR.setTheme(EDITOR_LIGHT_THEME);
-    EDITOR.session.setMode('ace/mode/javascript');
+    EDITOR.setTheme(EDITOR_DARK_THEME);
+    setDarkThemeDefaults();
+    EDITOR.session.setMode(EDITOR_MODE);
     EDITOR.resize();
 
     EDITOR.setOptions({
@@ -110,13 +111,11 @@ function setupCodeEditor() {
     });
 
     const editorId = EDITOR.container.id;
-    const wrapperElementId = editorId + 'Wrapper';
+    const wrapperElementId = editorId + '-wrapper';
     document.getElementById(wrapperElementId).style.width = (getLengthOfLongestLine(DEFAULT_CODE) + 4) + 'ch';
 
     makeAceEditorResizable();
 }
-
-setupCodeEditor();
 
 // reading user input and attempting to parse it as JS code, creating a tree
 function executeInput() {
@@ -136,26 +135,54 @@ function init() {
     executeInput();
 }
 
-function changeTheme() {
+function switchTheme() {
     if (EDITOR_LIGHT_THEME === EDITOR.getTheme()) {
         EDITOR.setTheme(EDITOR_DARK_THEME);
-        document.getElementById('themeButton').style.backgroundColor = '#FCF7E3';
-        document.getElementById('editorWrapper').style.backgroundColor = '#282A36';
-        document.getElementById('editorDragbar').style.backgroundColor = '#282A36';
-        document.body.style.background = '#1F232C';
-        CURRENT_FONT_COLOR = '#FFFFFF';
+        setDarkThemeDefaults();
         drawTree();
     } else {
         EDITOR.setTheme(EDITOR_LIGHT_THEME);
-        document.getElementById('themeButton').style.backgroundColor = '#282A36';
-        document.getElementById('editorWrapper').style.backgroundColor = '#FCF7E3';
-        document.getElementById('editorDragbar').style.backgroundColor = '#FCF7E3';
-        document.body.style.background = '#F7F7F7';
-        CURRENT_FONT_COLOR = '#000000';
+        setLightThemeDefaults();
         drawTree();
     }
 }
 
+function setDarkThemeDefaults() {
+    setThemeDefaults({
+        bodyBackground: '#1F232C',
+        fontColor: '#FFFFFF',
+        editorBackground: '#282A36',
+        dragBarBackground: '#282A36',
+        themeButtonBackground: '#FCF7E3',
+        themeButtonHeight: '1.3vw',
+        themeButtonWidth: '1.3vw'
+    });
+}
+
+function setLightThemeDefaults() {
+    setThemeDefaults({
+        bodyBackground: '#F7F7F7',
+        fontColor: '#000000',
+        editorBackground: '#FCF7E3',
+        dragBarBackground: '#FCF7E3',
+        themeButtonBackground: '#282A36',
+        themeButtonHeight: '1.4vw',
+        themeButtonWidth: '1.4vw'
+    });
+}
+
+function setThemeDefaults(themeDefaults) {
+    document.body.style.background = themeDefaults.bodyBackground;
+    CURRENT_FONT_COLOR = themeDefaults.fontColor;
+    document.getElementById('editor-wrapper').style.backgroundColor = themeDefaults.editorBackground;
+    document.getElementById('editor-drag-bar').style.backgroundColor = themeDefaults.dragBarBackground;
+    document.getElementById('theme-button').style.backgroundColor = themeDefaults.themeButtonBackground;
+    document.getElementById('theme-button').style.height = themeDefaults.themeButtonHeight;
+    document.getElementById('theme-button').style.width = themeDefaults.themeButtonWidth;
+}
+
 document.body.style.background = '#F7F7F7';
+
+setupCodeEditor();
 
 init();

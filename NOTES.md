@@ -1,10 +1,10 @@
-- css naming conventions
-- order css by appearance in html
 - the theme switch button looks bigger in dark mode
-- make dark mode default
 - add note: best suited for larger screens
 - align buttons better to be in line with RUN
 - ds picker button should change content and size when a DS is chosen
+- em and stuff
+- fix run button size
+- replace with vmax/vmin?
 
 - need help? - modal
 - error handling
