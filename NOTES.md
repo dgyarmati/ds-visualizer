@@ -5,6 +5,7 @@
 - add note: best suited for larger screens
 - align buttons better to be in line with RUN
 - ds picker button should change content and size when a DS is chosen
+- em and stuff
 
 - need help? - modal
 - error handling

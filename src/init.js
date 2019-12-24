@@ -7,13 +7,13 @@ function makeAceEditorResizable() {
     window.draggingAceEditor = {};
 
     const editorId = EDITOR.container.id;
-    const dragbarId = editorId + 'Dragbar';
-    const wrapperElementId = editorId + 'Wrapper';
-    const menuBarId = 'menuBar';
+    const dragBarId = editorId + '-drag-bar';
+    const wrapperElementId = editorId + '-wrapper';
+    const menuBarId = 'menu-bar';
 
     const editorElement = document.getElementById(editorId);
     const wrapperElement = document.getElementById(wrapperElementId);
-    const dragbarElement = document.getElementById(dragbarId);
+    const dragBarElement = document.getElementById(dragBarId);
     const editorButton = document.getElementById(menuBarId);
 
     const editorBounds = editorElement.getBoundingClientRect();
@@ -52,10 +52,10 @@ function makeAceEditorResizable() {
 
         editorButton.style.display = 'none';
 
-        dragbarElement.style.opacity = '0.15';
+        dragBarElement.style.opacity = '0.15';
     };
 
-    dragbarElement.addEventListener('mousedown', mousedownAction);
+    dragBarElement.addEventListener('mousedown', mousedownAction);
 
     let mouseupAction = function (event) {
         if (window.draggingAceEditor[editorId]) {
@@ -79,7 +79,7 @@ function makeAceEditorResizable() {
 
             editorButton.style.display = 'block';
 
-            dragbarElement.style.opacity = '1';
+            dragBarElement.style.opacity = '1';
 
             EDITOR.resize();
 
@@ -110,7 +110,7 @@ function setupCodeEditor() {
     });
 
     const editorId = EDITOR.container.id;
-    const wrapperElementId = editorId + 'Wrapper';
+    const wrapperElementId = editorId + '-wrapper';
     document.getElementById(wrapperElementId).style.width = (getLengthOfLongestLine(DEFAULT_CODE) + 4) + 'ch';
 
     makeAceEditorResizable();
@@ -139,17 +139,17 @@ function init() {
 function changeTheme() {
     if (EDITOR_LIGHT_THEME === EDITOR.getTheme()) {
         EDITOR.setTheme(EDITOR_DARK_THEME);
-        document.getElementById('themeButton').style.backgroundColor = '#FCF7E3';
-        document.getElementById('editorWrapper').style.backgroundColor = '#282A36';
-        document.getElementById('editorDragbar').style.backgroundColor = '#282A36';
+        document.getElementById('editor-wrapper').style.backgroundColor = '#282A36';
+        document.getElementById('editor-drag-bar').style.backgroundColor = '#282A36';
+        document.getElementById('theme-button').style.backgroundColor = '#FCF7E3';
         document.body.style.background = '#1F232C';
         CURRENT_FONT_COLOR = '#FFFFFF';
         drawTree();
     } else {
         EDITOR.setTheme(EDITOR_LIGHT_THEME);
-        document.getElementById('themeButton').style.backgroundColor = '#282A36';
-        document.getElementById('editorWrapper').style.backgroundColor = '#FCF7E3';
-        document.getElementById('editorDragbar').style.backgroundColor = '#FCF7E3';
+        document.getElementById('editor-wrapper').style.backgroundColor = '#FCF7E3';
+        document.getElementById('editor-drag-bar').style.backgroundColor = '#FCF7E3';
+        document.getElementById('theme-button').style.backgroundColor = '#282A36';
         document.body.style.background = '#F7F7F7';
         CURRENT_FONT_COLOR = '#000000';
         drawTree();
