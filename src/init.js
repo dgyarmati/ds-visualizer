@@ -147,14 +147,6 @@ function changeTheme() {
     }
 }
 
-function setThemeDefaults(themeDefaults) {
-    document.body.style.background = themeDefaults.bodyBackground;
-    CURRENT_FONT_COLOR = themeDefaults.fontColor;
-    document.getElementById('editor-wrapper').style.backgroundColor = themeDefaults.editorBackground;
-    document.getElementById('editor-drag-bar').style.backgroundColor = themeDefaults.dragBarBackground;
-    document.getElementById('theme-button').style.backgroundColor = themeDefaults.themeButtonBackground;
-}
-
 function setDarkThemeDefaults() {
     setThemeDefaults({
         bodyBackground: '#1F232C',
@@ -173,6 +165,14 @@ function setLightThemeDefaults() {
         dragBarBackground: '#FCF7E3',
         themeButtonBackground: '#282A36'
     });
+}
+
+function setThemeDefaults(themeDefaults) {
+    document.body.style.background = themeDefaults.bodyBackground;
+    CURRENT_FONT_COLOR = themeDefaults.fontColor;
+    document.getElementById('editor-wrapper').style.backgroundColor = themeDefaults.editorBackground;
+    document.getElementById('editor-drag-bar').style.backgroundColor = themeDefaults.dragBarBackground;
+    document.getElementById('theme-button').style.backgroundColor = themeDefaults.themeButtonBackground;
 }
 
 document.body.style.background = '#F7F7F7';
