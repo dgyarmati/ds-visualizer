@@ -135,7 +135,7 @@ function init() {
     executeInput();
 }
 
-function changeTheme() {
+function switchTheme() {
     if (EDITOR_LIGHT_THEME === EDITOR.getTheme()) {
         EDITOR.setTheme(EDITOR_DARK_THEME);
         setDarkThemeDefaults();
@@ -153,7 +153,9 @@ function setDarkThemeDefaults() {
         fontColor: '#FFFFFF',
         editorBackground: '#282A36',
         dragBarBackground: '#282A36',
-        themeButtonBackground: '#FCF7E3'
+        themeButtonBackground: '#FCF7E3',
+        themeButtonHeight: '1.3vw',
+        themeButtonWidth: '1.3vw'
     });
 }
 
@@ -163,7 +165,9 @@ function setLightThemeDefaults() {
         fontColor: '#000000',
         editorBackground: '#FCF7E3',
         dragBarBackground: '#FCF7E3',
-        themeButtonBackground: '#282A36'
+        themeButtonBackground: '#282A36',
+        themeButtonHeight: '1.4vw',
+        themeButtonWidth: '1.4vw'
     });
 }
 
@@ -173,6 +177,8 @@ function setThemeDefaults(themeDefaults) {
     document.getElementById('editor-wrapper').style.backgroundColor = themeDefaults.editorBackground;
     document.getElementById('editor-drag-bar').style.backgroundColor = themeDefaults.dragBarBackground;
     document.getElementById('theme-button').style.backgroundColor = themeDefaults.themeButtonBackground;
+    document.getElementById('theme-button').style.height = themeDefaults.themeButtonHeight;
+    document.getElementById('theme-button').style.width = themeDefaults.themeButtonWidth;
 }
 
 document.body.style.background = '#F7F7F7';

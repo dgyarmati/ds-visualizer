@@ -40,8 +40,8 @@
 }
 
 .show-help-button {
-    height: 1.5vw;
-    width: 1.5vw;
+    height: 1.4vw;
+    width: 1.4vw;
     border-radius: 50%;
     border: 2px solid black;
     background: #FFFFFF;
@@ -58,8 +58,8 @@
 }
 
 .show-console-button {
-    height: 1.5vw;
-    width: 1.5vw;
+    height: 1.4vw;
+    width: 1.4vw;
     border-radius: 50%;
     border: 2px solid black;
     background: #FFFFFF;
@@ -76,10 +76,10 @@
 }
 
 .theme-change-button {
-    height: 1.5vw;
-    width: 1.5vw;
+    height: 1.3vw;
+    width: 1.3vw;
     border-radius: 50%;
-    background: #282A36;
+    background: #FCF7E3;
     cursor: pointer;
     border: none;
     outline: none;
