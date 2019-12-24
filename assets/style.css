@@ -115,7 +115,7 @@
     font-family: 'Arial', serif;
 }
 
-.ds-selector:hover .dsSelector-content {
+.ds-selector:hover .ds-selector-content {
     display: flex;
 }
 

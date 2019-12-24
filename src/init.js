@@ -147,21 +147,32 @@ function changeTheme() {
     }
 }
 
+function setThemeDefaults(themeDefaults) {
+    document.body.style.background = themeDefaults.bodyBackground;
+    CURRENT_FONT_COLOR = themeDefaults.fontColor;
+    document.getElementById('editor-wrapper').style.backgroundColor = themeDefaults.editorBackground;
+    document.getElementById('editor-drag-bar').style.backgroundColor = themeDefaults.dragBarBackground;
+    document.getElementById('theme-button').style.backgroundColor = themeDefaults.themeButtonBackground;
+}
+
 function setDarkThemeDefaults() {
-    document.getElementById('editor-wrapper').style.backgroundColor = '#282A36';
-    document.getElementById('editor-drag-bar').style.backgroundColor = '#282A36';
-    document.getElementById('theme-button').style.backgroundColor = '#FCF7E3';
-    document.body.style.background = '#1F232C';
-    CURRENT_FONT_COLOR = '#FFFFFF';
+    setThemeDefaults({
+        bodyBackground: '#1F232C',
+        fontColor: '#FFFFFF',
+        editorBackground: '#282A36',
+        dragBarBackground: '#282A36',
+        themeButtonBackground: '#FCF7E3'
+    });
 }
 
 function setLightThemeDefaults() {
-    EDITOR.setTheme(EDITOR_LIGHT_THEME);
-    document.getElementById('editor-wrapper').style.backgroundColor = '#FCF7E3';
-    document.getElementById('editor-drag-bar').style.backgroundColor = '#FCF7E3';
-    document.getElementById('theme-button').style.backgroundColor = '#282A36';
-    document.body.style.background = '#F7F7F7';
-    CURRENT_FONT_COLOR = '#000000';
+    setThemeDefaults({
+        bodyBackground: '#F7F7F7',
+        fontColor: '#000000',
+        editorBackground: '#FCF7E3',
+        dragBarBackground: '#FCF7E3',
+        themeButtonBackground: '#282A36'
+    });
 }
 
 document.body.style.background = '#F7F7F7';
