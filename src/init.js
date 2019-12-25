@@ -153,9 +153,9 @@ function setDarkThemeDefaults() {
         fontColor: '#FFFFFF',
         editorBackground: '#282A36',
         dragBarBackground: '#282A36',
-        themeButtonBackground: 'linear-gradient(to right, #282A36 0%, #282A36 55%, #FCF7E3 50%, #FCF7E3 100%)',
-        themeButtonHeight: '1.3vw',
-        themeButtonWidth: '1.3vw'
+        themeButtonBackground: 'linear-gradient(to right, #282A36 0%, #282A36 50%, #FCF7E3 50%, #FCF7E3 100%)',
+        themeButtonHeight: '1.8vw',
+        themeButtonWidth: '1.8vw'
     });
 }
 
@@ -166,8 +166,8 @@ function setLightThemeDefaults() {
         editorBackground: '#FCF7E3',
         dragBarBackground: '#FCF7E3',
         themeButtonBackground: 'linear-gradient(to right, #FCF7E3 0%, #FCF7E3 50%, #282A36 50%, #282A36 100%)',
-        themeButtonHeight: '1.4vw',
-        themeButtonWidth: '1.4vw'
+        themeButtonHeight: '1.9vw',
+        themeButtonWidth: '1.9vw'
     });
 }
 
