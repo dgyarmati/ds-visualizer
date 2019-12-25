@@ -47,7 +47,7 @@
     cursor: pointer;
     outline: none;
     margin-top: 2.1vh;
-    margin-left: 2vw;
+    margin-left: 1vw;
     float: left;
     user-select: none; /* supported by Chrome and Opera */
     -webkit-user-select: none; /* Safari */
@@ -76,7 +76,7 @@
     border: transparent;
     outline: none;
     margin-top: 2.1vh;
-    margin-left: 1vw;
+    margin-left: 1.5vw;
     float: left;
     user-select: none; /* supported by Chrome and Opera */
     -webkit-user-select: none; /* Safari */
@@ -109,7 +109,7 @@
     cursor: pointer;
     outline: none;
     margin-top: 1.6vh;
-    margin-left: 1vw;
+    margin-left: 1.5vw;
     float: left;
     user-select: none; /* supported by Chrome and Opera */
     -webkit-user-select: none; /* Safari */
@@ -120,28 +120,37 @@
 
 .ds-selector {
     margin-top: 1.9vh;
-    margin-left: 1vw;
+    margin-left: 1.5vw;
     position: relative;
     display: inline-block;
     float: left;
 }
 
 .ds-selector-button {
-    color: #D2735D;
-    padding: 0.3vw 1vh;
-    font-size: 0.6vw;
+    height: 1.4vw;
+    width: 1.4vw;
     cursor: pointer;
     text-decoration: none;
     text-transform: uppercase;
     border-radius: 6px;
     outline: none;
     background: transparent;
-    border: 2px solid #D2735D;
+    border: transparent;
     user-select: none; /* supported by Chrome and Opera */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
+    font-size: 1.2vw;
+}
+
+.list-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #D2735D !important;
+    background: transparent;
 }
 
 .ds-selector-content {
@@ -171,15 +180,16 @@
 }
 
 .run-button {
-    color: #5DBCD2;
-    border: 2px solid #5DBCD2;
+    color: #D2735D;
+    border: 2px solid #D2735D;
     background: transparent;
     border-radius: 6px;
     padding: 0.5vw 2vh;
     text-align: center;
     display: inline-block;
-    font-size: 0.7vw;
-    margin-top: 1vh;
+    font-size: 0.8vw;
+    margin-top: 1.2vh;
+    margin-right: 0.5vw;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
@@ -196,7 +206,7 @@
 }
 
 .run-button:hover {
-    background-color: #008CBA;
+    background-color: #D2735D;
     color: white;
 }
 
