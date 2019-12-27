@@ -185,6 +185,7 @@
     font-size: 0.6vw;
     margin: auto;
     font-family: 'Arial', serif;
+    cursor: pointer;
 }
 
 .ds-selector:hover .ds-selector-content {
@@ -194,7 +195,6 @@
 .ds {
     margin: auto;
     text-align: center;
-    cursor: pointer;
 }
 
 .run-button {
