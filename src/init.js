@@ -135,6 +135,16 @@ function init() {
     executeInput();
 }
 
+function showConsole() {
+    if (document.getElementById("terminal-icon").classList.contains('hidden-console')) {
+        document.getElementById("terminal-icon").classList.remove('hidden-console');
+        document.getElementById("terminal-icon").classList.add('visible-console');
+    } else {
+        document.getElementById("terminal-icon").classList.remove('visible-console');
+        document.getElementById("terminal-icon").classList.add('hidden-console');
+    }
+}
+
 function switchTheme() {
     if (EDITOR_LIGHT_THEME === EDITOR.getTheme()) {
         EDITOR.setTheme(EDITOR_DARK_THEME);

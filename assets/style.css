@@ -87,12 +87,21 @@
     font-size: 1vw;
 }
 
-.console-icon {
+.hidden-console {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #D2735D !important;
+    background: transparent;
+}
+
+.visible-console {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #5DBCD2 !important;
     background: transparent;
 }
 

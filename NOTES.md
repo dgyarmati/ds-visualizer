@@ -18,8 +18,8 @@
 - console
 - Point class
 - re-render stuff on resizing
-
 - debugger logic
+- limit the initial version to trees only, remove dropdown
 
 - server deployment
 - ci pipeline
