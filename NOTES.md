@@ -20,6 +20,8 @@
 - re-render stuff on resizing
 - debugger logic
 - limit the initial version to trees only, remove dropdown
+- fadein effect at startup
+- pulsing help button at startup
 
 - server deployment
 - ci pipeline
