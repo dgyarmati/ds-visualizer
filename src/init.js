@@ -135,13 +135,13 @@ function init() {
     executeInput();
 }
 
-function showConsole() {
-    if (document.getElementById("terminal-icon").classList.contains('hidden-console')) {
-        document.getElementById("terminal-icon").classList.remove('hidden-console');
-        document.getElementById("terminal-icon").classList.add('visible-console');
+function toggleMenu(id, hiddenClass, visibleClass) {
+    if (document.getElementById(id).classList.contains(hiddenClass)) {
+        document.getElementById(id).classList.remove(hiddenClass);
+        document.getElementById(id).classList.add(visibleClass);
     } else {
-        document.getElementById("terminal-icon").classList.remove('visible-console');
-        document.getElementById("terminal-icon").classList.add('hidden-console');
+        document.getElementById(id).classList.remove(visibleClass);
+        document.getElementById(id).classList.add(hiddenClass);
     }
 }
 

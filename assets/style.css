@@ -59,12 +59,21 @@
     background: transparent;
 }
 
-.help-icon {
+.hidden-help {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #D2735D !important;
+    background: transparent;
+}
+
+.visible-help {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #5DBCD2 !important;
     background: transparent;
 }
 
