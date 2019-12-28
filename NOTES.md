@@ -22,6 +22,7 @@
 - limit the initial version to trees only, remove dropdown
 - fadein effect at startup
 - pulsing help button at startup
+- commenting, refactoring
 
 - server deployment
 - ci pipeline
