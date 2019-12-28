@@ -145,15 +145,10 @@ function toggle(id, hiddenClass, visibleClass) {
         element.classList.remove(visibleClass);
         element.classList.add(hiddenClass);
     }
-
-    if (element.id === 'help-icon') {
-        const closeButton = document.querySelector('.close-button');
-        const modal = document.querySelector('.help-modal');
-        toggleModal(modal);
-    }
 }
 
-function toggleModal(modal) {
+function toggleModal(className) {
+    const modal = document.querySelector('.help-modal');
     modal.classList.toggle("show-modal");
 }
 
