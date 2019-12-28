@@ -135,14 +135,26 @@ function init() {
     executeInput();
 }
 
-function toggleMenu(id, hiddenClass, visibleClass) {
-    if (document.getElementById(id).classList.contains(hiddenClass)) {
-        document.getElementById(id).classList.remove(hiddenClass);
-        document.getElementById(id).classList.add(visibleClass);
+function toggle(id, hiddenClass, visibleClass) {
+    const element = document.getElementById(id);
+
+    if (element.classList.contains(hiddenClass)) {
+        element.classList.remove(hiddenClass);
+        element.classList.add(visibleClass);
     } else {
-        document.getElementById(id).classList.remove(visibleClass);
-        document.getElementById(id).classList.add(hiddenClass);
+        element.classList.remove(visibleClass);
+        element.classList.add(hiddenClass);
     }
+
+    if (element.id === 'help-icon') {
+        const closeButton = document.querySelector('.close-button');
+        const modal = document.querySelector('.help-modal');
+        toggleModal(modal);
+    }
+}
+
+function toggleModal(modal) {
+    modal.classList.toggle("show-modal");
 }
 
 function switchTheme() {

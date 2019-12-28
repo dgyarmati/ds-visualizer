@@ -14,8 +14,14 @@
         <div id="editor-drag-bar" class="app-editor-drag-bar">
         </div>
         <div class="menu" id="menu-bar">
-            <button title="help" onclick="toggleMenu('help-icon', 'hidden-help', 'visible-help')" type="button" id="help-button" class="show-help-button"><i class="fas fa-question hidden-help" id="help-icon" aria-hidden="true"></i></button>
-            <button title="show console" onclick="toggleMenu('terminal-icon', 'hidden-console', 'visible-console')" type="button" id="console-button" class="show-console-button"><i class="fas fa-terminal hidden-console" id="terminal-icon" aria-hidden="true"></i></button>
+            <button title="help" onclick="toggle('help-icon', 'hidden-help', 'visible-help')" type="button" id="help-button" class="show-help-button"><i class="fas fa-question hidden-help" id="help-icon" aria-hidden="true"></i></button>
+            <div class="help-modal">
+                <div class="help-modal-content">
+                    <span class="close-button">&times;</span>
+                    <h1>Lorem ipsum</h1>
+                </div>
+            </div>
+            <button title="show console" onclick="toggle('terminal-icon', 'hidden-console', 'visible-console')" type="button" id="console-button" class="show-console-button"><i class="fas fa-terminal hidden-console" id="terminal-icon" aria-hidden="true"></i></button>
             <div title="select data structure" class="ds-selector">
                 <button type="button" class="ds-selector-button"><i class="fas fa-list list-icon" aria-hidden="true"></i></button>
                 <div class="ds-selector-content">
