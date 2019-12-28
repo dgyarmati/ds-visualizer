@@ -147,7 +147,7 @@ function toggle(id, hiddenClass, visibleClass) {
     }
 }
 
-function toggleModal(className) {
+function toggleHelpModal() {
     const modal = document.querySelector('.help-modal');
     modal.classList.toggle("show-modal");
 }
