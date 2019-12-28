@@ -6,6 +6,7 @@
 - fix run button size
 - replace with vmax/vmin?
 - download only used fa icons
+- modal should disappear when there is an outside click as well
 
 - need help? - modal
 - error handling
