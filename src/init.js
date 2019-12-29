@@ -150,6 +150,15 @@ function toggle(id, hiddenClass, visibleClass) {
 function toggleHelpModal() {
     const modal = document.querySelector('.help-modal');
     modal.classList.toggle("show-modal");
+
+    function windowOnClick(event) {
+        if (event.target === modal) {
+            modal.classList.toggle("show-modal");
+            window.removeEventListener("click", windowOnClick);
+        }
+    }
+
+    window.addEventListener("click", windowOnClick);
 }
 
 function switchTheme() {
