@@ -1,3 +1,7 @@
+body {
+    font-family: Roboto, Courier, sans-serif;
+}
+
 .container {
     width: 95vw;
     height: 95vh;
@@ -91,6 +95,7 @@
 }
 
 .help-modal-content {
+    text-align: justify;
     position: absolute;
     top: 50%;
     left: 50%;
