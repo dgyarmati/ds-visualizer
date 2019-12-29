@@ -23,11 +23,14 @@
 - limit the initial version to trees only, remove dropdown
 - fadein effect at startup
 - pulsing help button at startup
+- bouncing help button at startup?
 - commenting, refactoring
+- link it to the blog
 
 - server deployment
 - ci pipeline
 - git cleanup
 - learning
+- mobile version with draggable blocks
 
 - small screen problem?
