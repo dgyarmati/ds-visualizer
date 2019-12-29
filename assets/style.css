@@ -292,5 +292,13 @@ a {
 
 #nodes {
     position: absolute;
+}
+
+.draggable {
+    cursor: move; /* fallback if grab cursor is unsupported */
     cursor: grab;
+}
+
+.draggable:active {
+    cursor: grabbing;
 }
