@@ -81,25 +81,25 @@ body {
 
 @-webkit-keyframes glowing {
     0% { color: #D2735D}
-    50% {color: #B20000}
+    50% {color: #5DBCD2}
     100% { color: #D2735D}
 }
 
 @-moz-keyframes glowing {
     0% { color: #D2735D}
-    50% {color: #B20000}
+    50% {color: #5DBCD2}
     100% { color: #D2735D}
 }
 
 @-o-keyframes glowing {
     0% { color: #D2735D}
-    50% {color: #B20000}
+    50% {color: #5DBCD2}
     100% { color: #D2735D}
 }
 
 @keyframes glowing {
     0% { color: #D2735D}
-    50% {color: #B20000}
+    50% {color: #5DBCD2}
     100% { color: #D2735D}
 }
 
