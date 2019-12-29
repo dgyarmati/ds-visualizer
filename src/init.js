@@ -154,6 +154,7 @@ function toggleHelpModal() {
     function windowOnClick(event) {
         if (event.target === modal) {
             modal.classList.toggle("show-modal");
+            toggle('help-icon', 'hidden-help', 'visible-help');
             window.removeEventListener("click", windowOnClick);
         }
     }
