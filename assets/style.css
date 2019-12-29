@@ -70,6 +70,9 @@ body {
     transform: translate(-50%, -50%);
     color: #D2735D !important;
     background: transparent;
+}
+
+.help-animation {
     -webkit-animation: glowing 1500ms infinite;
     -moz-animation: glowing 1500ms infinite;
     -o-animation: glowing 1500ms infinite;

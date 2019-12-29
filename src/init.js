@@ -148,6 +148,8 @@ function toggle(id, hiddenClass, visibleClass) {
 }
 
 function toggleHelpModal() {
+    removeHelpIconAnimation();
+
     const modal = document.querySelector('.help-modal');
     modal.classList.toggle("show-modal");
 
@@ -208,8 +210,20 @@ function setThemeDefaults(themeDefaults) {
     document.getElementById('theme-button').style.width = themeDefaults.themeButtonWidth;
 }
 
+function setHelpAnimationIconTimeout() {
+    setTimeout(removeHelpIconAnimation, 10000);
+}
+
+function removeHelpIconAnimation() {
+    const helpIcon = document.getElementById('help-icon');
+    if (helpIcon.classList.contains('help-animation')) {
+        helpIcon.classList.remove('help-animation');
+    }
+}
+
 document.body.style.background = '#F7F7F7';
 
 setupCodeEditor();
+setHelpAnimationIconTimeout();
 
 init();
