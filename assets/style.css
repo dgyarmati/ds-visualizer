@@ -70,6 +70,34 @@ body {
     transform: translate(-50%, -50%);
     color: #D2735D !important;
     background: transparent;
+    -webkit-animation: glowing 1500ms infinite;
+    -moz-animation: glowing 1500ms infinite;
+    -o-animation: glowing 1500ms infinite;
+    animation: glowing 1500ms infinite;
+}
+
+@-webkit-keyframes glowing {
+    0% { color: #D2735D}
+    50% {color: #B20000}
+    100% { color: #D2735D}
+}
+
+@-moz-keyframes glowing {
+    0% { color: #D2735D}
+    50% {color: #B20000}
+    100% { color: #D2735D}
+}
+
+@-o-keyframes glowing {
+    0% { color: #D2735D}
+    50% {color: #B20000}
+    100% { color: #D2735D}
+}
+
+@keyframes glowing {
+    0% { color: #D2735D}
+    50% {color: #B20000}
+    100% { color: #D2735D}
 }
 
 .visible-help {
