@@ -27,6 +27,7 @@
 - commenting, refactoring
 - link it to the blog
 - close button on help modal
+- icon: tree
 
 - server deployment
 - ci pipeline
