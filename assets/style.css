@@ -122,6 +122,10 @@
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
+h1, h2 {
+    text-align: center;
+}
+
 .show-console-button {
     height: 1.4vw;
     width: 1.4vw;
