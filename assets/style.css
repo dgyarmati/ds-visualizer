@@ -96,8 +96,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    padding: 1rem 1.5rem;
-    width: 24rem;
+    padding: 2rem 3rem 2rem 3rem;
+    width: 30vw;
     border-radius: 0.5rem;
 }
 
