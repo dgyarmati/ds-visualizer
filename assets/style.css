@@ -82,6 +82,7 @@ body {
 }
 
 .help-modal {
+    z-index: 10;
     position: fixed;
     left: 0;
     top: 0;
@@ -291,4 +292,5 @@ a {
 
 #nodes {
     position: absolute;
+    cursor: grab;
 }
