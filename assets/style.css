@@ -105,6 +105,8 @@ body {
     padding: 2rem 3rem 2rem 3rem;
     width: 30vw;
     border-radius: 0.5rem;
+    font-size: 2vh;
+    cursor: default;
 }
 
 .close-button {
