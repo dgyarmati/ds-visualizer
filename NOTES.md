@@ -26,6 +26,7 @@
 - bouncing help button at startup?
 - commenting, refactoring
 - link it to the blog
+- close button on help modal
 
 - server deployment
 - ci pipeline
