@@ -7,6 +7,9 @@
 - replace with vmax/vmin?
 - download only used fa icons
 - modal should disappear when there is an outside click as well
+- move console code to library code section
+- clean up its code a little
+- redefine console object to point to integrated console?
 
 - need help? - modal
 - error handling

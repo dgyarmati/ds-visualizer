@@ -119,11 +119,15 @@ function setupCodeEditor() {
 
 // reading user input and attempting to parse it as JS code, creating a tree
 function executeInput() {
-    NODE_COORDINATES.clear();
-    clearCanvas();
-    const code = EDITOR.getValue();
-    const func = new Function(code);
-    func();
+    try {
+        NODE_COORDINATES.clear();
+        clearCanvas();
+        const code = EDITOR.getValue();
+        const func = new Function(code);
+        func();
+    } catch (e) {
+        handle_command(e);
+    }
 }
 
 function clearCanvas() {
@@ -225,5 +229,26 @@ document.body.style.background = '#F7F7F7';
 
 setupCodeEditor();
 setHelpAnimationIconTimeout();
+
+var con = new SimpleConsole({
+    handleCommand: handle_command,
+    placeholder: "Enter JavaScript, or ASCII emoticons :)",
+    storageID: "simple-console demo"
+});
+document.body.appendChild(con.element);
+
+function handle_command(command) {
+    var err;
+    try {
+        var result = eval(command);
+    } catch (error) {
+        err = error;
+    }
+    if (err) {
+        con.error(err);
+    } else {
+        con.log(result).classList.add("result");
+    }
+}
 
 init();
