@@ -137,7 +137,6 @@ function clearCanvas() {
 function init() {
     setupCodeEditor();
     setHelpAnimationIconTimeout();
-    setupConsole();
     EDITOR.setValue(DEFAULT_CODE, 1);
     executeInput();
 }
@@ -240,19 +239,18 @@ function removeHelpIconAnimation() {
 
 document.body.style.background = '#F7F7F7';
 
-function setupConsole() {
-    const console = new SimpleConsole({
-        handleCommand: handleCommand,
-        storageID: "simple-console",
-    });
+const console = new SimpleConsole({
+    handleCommand: handleCommand,
+    storageID: "simple-console",
+});
 
-    document.getElementById('editor-wrapper').appendChild(console.element);
-}
+document.getElementById('editor-wrapper').appendChild(console.element);
 
 function handleCommand(command) {
     let err;
+    let result;
     try {
-        let result = eval(command);
+        result = eval(command);
     } catch (error) {
         err = error;
     }

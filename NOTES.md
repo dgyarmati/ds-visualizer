@@ -12,6 +12,7 @@
 - redefine console object to point to integrated console?
 - clear command history scrollbar
 - canvas still hangs into some buttons
+- display editor errors as such instead of regular text
 
 - need help? - modal
 - error handling
