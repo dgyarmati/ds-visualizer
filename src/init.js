@@ -200,7 +200,10 @@ function setDarkThemeDefaults() {
         dragBarBackground: '#282A36',
         themeButtonBackground: 'linear-gradient(to right, #282A36 0%, #282A36 50%, #FCF7E3 50%, #FCF7E3 100%)',
         themeButtonHeight: '1.8vw',
-        themeButtonWidth: '1.8vw'
+        themeButtonWidth: '1.8vw',
+        consoleBackground: '#262A35',
+        consoleColor: '#9EA1AA',
+        consoleErrorLineBackground: '#3D4454',
     });
 }
 
@@ -212,7 +215,10 @@ function setLightThemeDefaults() {
         dragBarBackground: '#FCF7E3',
         themeButtonBackground: 'linear-gradient(to right, #FCF7E3 0%, #FCF7E3 50%, #282A36 50%, #282A36 100%)',
         themeButtonHeight: '1.9vw',
-        themeButtonWidth: '1.9vw'
+        themeButtonWidth: '1.9vw',
+        consoleBackground: '#FCF7E3',
+        consoleColor: '#000000',
+        consoleErrorLineBackground: '#F2E9DA',
     });
 }
 
@@ -224,6 +230,9 @@ function setThemeDefaults(themeDefaults) {
     document.getElementById('theme-button').style.background = themeDefaults.themeButtonBackground;
     document.getElementById('theme-button').style.height = themeDefaults.themeButtonHeight;
     document.getElementById('theme-button').style.width = themeDefaults.themeButtonWidth;
+    document.querySelector('.simple-console').style.backgroundColor = themeDefaults.consoleBackground;
+    document.querySelector('.simple-console').style.color = themeDefaults.consoleColor;
+    //document.querySelector('.error').style.backgroundColor = themeDefaults.consoleErrorLineBackground;
 }
 
 function setHelpAnimationIconTimeout() {
@@ -257,7 +266,7 @@ function handleCommand(command) {
     if (err) {
         console.error(err);
     } else {
-        console.log(result).classList.add("result");
+        console.error(result).classList.add("result");
     }
 }
 
