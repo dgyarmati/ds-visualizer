@@ -135,6 +135,9 @@ function clearCanvas() {
 }
 
 function init() {
+    setupCodeEditor();
+    setHelpAnimationIconTimeout();
+    setupConsole();
     EDITOR.setValue(DEFAULT_CODE, 1);
     executeInput();
 }
@@ -227,26 +230,26 @@ function removeHelpIconAnimation() {
 
 document.body.style.background = '#F7F7F7';
 
-setupCodeEditor();
-setHelpAnimationIconTimeout();
+function setupConsole() {
+    const console = new SimpleConsole({
+        handleCommand: handle_command,
+        storageID: "simple-console",
+    });
 
-const console = new SimpleConsole({
-    handleCommand: handle_command,
-    storageID: "simple-console",
-});
-document.getElementById('container').appendChild(console.element);
+    document.getElementById('container').appendChild(console.element);
 
-function handle_command(command) {
-    let err;
-    try {
-        let result = eval(command);
-    } catch (error) {
-        err = error;
-    }
-    if (err) {
-        console.error(err);
-    } else {
-        console.log(result).classList.add("result");
+    function handle_command(command) {
+        let err;
+        try {
+            let result = eval(command);
+        } catch (error) {
+            err = error;
+        }
+        if (err) {
+            console.error(err);
+        } else {
+            console.log(result).classList.add("result");
+        }
     }
 }
 
