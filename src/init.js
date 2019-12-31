@@ -230,23 +230,23 @@ document.body.style.background = '#F7F7F7';
 setupCodeEditor();
 setHelpAnimationIconTimeout();
 
-var con = new SimpleConsole({
+const console = new SimpleConsole({
     handleCommand: handle_command,
-    storageID: "simple-console demo",
+    storageID: "simple-console",
 });
-document.body.appendChild(con.element);
+document.getElementById('container').appendChild(console.element);
 
 function handle_command(command) {
-    var err;
+    let err;
     try {
-        var result = eval(command);
+        let result = eval(command);
     } catch (error) {
         err = error;
     }
     if (err) {
-        con.error(err);
+        console.error(err);
     } else {
-        con.log(result).classList.add("result");
+        console.log(result).classList.add("result");
     }
 }
 
