@@ -114,7 +114,7 @@ body {
 }
 
 .help-modal {
-    z-index: 10;
+    z-index: 11;
     position: fixed;
     left: 0;
     top: 0;

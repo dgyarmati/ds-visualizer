@@ -11,6 +11,7 @@
 - clean up its code a little
 - redefine console object to point to integrated console?
 - clear command history scrollbar
+- canvas still hangs into some buttons
 
 - need help? - modal
 - error handling

@@ -126,7 +126,7 @@ function executeInput() {
         const func = new Function(code);
         func();
     } catch (e) {
-        handle_command(e);
+        handleCommand(e);
     }
 }
 
@@ -151,6 +151,16 @@ function toggle(id, hiddenClass, visibleClass) {
     } else {
         element.classList.remove(visibleClass);
         element.classList.add(hiddenClass);
+    }
+}
+
+function toggleConsole() {
+    const console = document.querySelector('.simple-console');
+
+    if (console.style.display === "none") {
+        console.style.display = "block";
+    } else {
+        console.style.display = "none";
     }
 }
 
@@ -232,24 +242,24 @@ document.body.style.background = '#F7F7F7';
 
 function setupConsole() {
     const console = new SimpleConsole({
-        handleCommand: handle_command,
+        handleCommand: handleCommand,
         storageID: "simple-console",
     });
 
     document.getElementById('editor-wrapper').appendChild(console.element);
+}
 
-    function handle_command(command) {
-        let err;
-        try {
-            let result = eval(command);
-        } catch (error) {
-            err = error;
-        }
-        if (err) {
-            console.error(err);
-        } else {
-            console.log(result).classList.add("result");
-        }
+function handleCommand(command) {
+    let err;
+    try {
+        let result = eval(command);
+    } catch (error) {
+        err = error;
+    }
+    if (err) {
+        console.error(err);
+    } else {
+        console.log(result).classList.add("result");
     }
 }
 
