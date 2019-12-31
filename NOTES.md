@@ -13,6 +13,7 @@
 - clear command history scrollbar
 - canvas still hangs into some buttons
 - display editor errors as such instead of regular text
+- console text selection when canvas overlap
 
 - need help? - modal
 - error handling
