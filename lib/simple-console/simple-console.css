@@ -7,12 +7,16 @@
     padding-top: 2vh;
     padding-bottom: 2vh;
     position: absolute;
-    width: 40%;
+    width: 41.5%;
     height:20%;
     border-radius: 20px;
-    background-color: #FCF7E3;
+    background-color: #262A35;
+    color: #9EA1AA;
     z-index: 10;
     opacity: 0.90;
+    margin-left: 1vh;
+    resize: both;
+    overflow: auto;
 }
 
 .simple-console-output {
@@ -163,8 +167,8 @@
 }
 
 .error {
-    color: #A00;
-    background: #FFF5F5;
+    color: #654364;
+    background: #3D4454;
 }
 
 .dark .error {

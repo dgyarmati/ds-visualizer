@@ -10,6 +10,7 @@
 - move console code to library code section
 - clean up its code a little
 - redefine console object to point to integrated console?
+- clear command history scrollbar
 
 - need help? - modal
 - error handling
