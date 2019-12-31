@@ -236,7 +236,7 @@ function setupConsole() {
         storageID: "simple-console",
     });
 
-    document.getElementById('container').appendChild(console.element);
+    document.getElementById('editor-wrapper').appendChild(console.element);
 
     function handle_command(command) {
         let err;
