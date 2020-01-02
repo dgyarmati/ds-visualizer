@@ -6,6 +6,7 @@ const CONTEXT = CANVAS.getContext('2d');
 const EDITOR = ace.edit('editor');
 const EDITOR_LIGHT_THEME = 'ace/theme/solarized_light';
 const EDITOR_DARK_THEME = 'ace/theme/dracula';
+let editorCurrentTheme = 'ace/theme/dracula';
 const EDITOR_MODE = 'ace/mode/javascript';
 
 CANVAS.width = window.innerWidth - 30;

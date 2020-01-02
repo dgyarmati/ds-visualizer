@@ -183,10 +183,12 @@ function toggleHelpModal() {
 function switchTheme() {
     if (EDITOR_LIGHT_THEME === EDITOR.getTheme()) {
         EDITOR.setTheme(EDITOR_DARK_THEME);
+        editorCurrentTheme = EDITOR_DARK_THEME;
         setDarkThemeDefaults();
         drawTree();
     } else {
         EDITOR.setTheme(EDITOR_LIGHT_THEME);
+        editorCurrentTheme = EDITOR_LIGHT_THEME;
         setLightThemeDefaults();
         drawTree();
     }
