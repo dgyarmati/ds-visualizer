@@ -17,6 +17,7 @@
 - fix console error message theme change hardcoded into library code - possibly find common color?
 - add a clear command to console
 - command history styling
+- fix command buttons distance from editor
 
 - need help? - modal
 - error handling
