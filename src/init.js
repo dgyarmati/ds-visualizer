@@ -234,7 +234,12 @@ function setThemeDefaults(themeDefaults) {
     document.getElementById('theme-button').style.width = themeDefaults.themeButtonWidth;
     document.querySelector('.simple-console').style.backgroundColor = themeDefaults.consoleBackground;
     document.querySelector('.simple-console').style.color = themeDefaults.consoleColor;
-    //document.querySelector('.error').style.backgroundColor = themeDefaults.consoleErrorLineBackground;
+    if (document.querySelector('.error')) {
+        let errors = document.querySelectorAll('.error');
+        for (const error of errors) {
+            error.style.backgroundColor = themeDefaults.consoleErrorLineBackground;
+        }
+    }
 }
 
 function setHelpAnimationIconTimeout() {

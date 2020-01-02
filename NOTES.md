@@ -14,7 +14,7 @@
 - canvas still hangs into some buttons
 - display editor errors as such instead of regular text
 - console text selection when canvas overlap
-- #F2E9DA
+- fix console error message theme change hardcoded into library code - possibly find common color?
 
 - need help? - modal
 - error handling
