@@ -15,6 +15,8 @@
 - display editor errors as such instead of regular text
 - console text selection when canvas overlap
 - fix console error message theme change hardcoded into library code - possibly find common color?
+- add a clear command to console
+- command history styling
 
 - need help? - modal
 - error handling

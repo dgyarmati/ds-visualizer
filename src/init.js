@@ -205,7 +205,6 @@ function setDarkThemeDefaults() {
         themeButtonWidth: '1.8vw',
         consoleBackground: '#262A35',
         consoleColor: '#9EA1AA',
-        consoleErrorLineBackground: '#3D4454',
     });
 }
 
@@ -220,7 +219,6 @@ function setLightThemeDefaults() {
         themeButtonWidth: '1.9vw',
         consoleBackground: '#FCF7E3',
         consoleColor: '#000000',
-        consoleErrorLineBackground: '#F2E9DA',
     });
 }
 
@@ -234,12 +232,6 @@ function setThemeDefaults(themeDefaults) {
     document.getElementById('theme-button').style.width = themeDefaults.themeButtonWidth;
     document.querySelector('.simple-console').style.backgroundColor = themeDefaults.consoleBackground;
     document.querySelector('.simple-console').style.color = themeDefaults.consoleColor;
-    if (document.querySelector('.error')) {
-        let errors = document.querySelectorAll('.error');
-        for (const error of errors) {
-            error.style.backgroundColor = themeDefaults.consoleErrorLineBackground;
-        }
-    }
 }
 
 function setHelpAnimationIconTimeout() {
