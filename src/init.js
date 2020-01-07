@@ -288,7 +288,7 @@ function setVisible(selector, visible) {
 
 onReady(function() {
     setVisible('.container', true);
-    setVisible('#loading', false);
+    setVisible('#loading-spinner', false);
 });
 
 init();
