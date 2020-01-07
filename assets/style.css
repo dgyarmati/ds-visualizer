@@ -18,6 +18,9 @@ body {
     background-color: #282A36;
     z-index: 10;
     opacity: 0.90;
+    --scrollbar-track-background: #282A36;
+    --scrollbar-background: #888;
+    --scrollbar-background-hover: #555;
 }
 
 .app-editor {
@@ -350,15 +353,18 @@ a {
 /* Track */
 ::-webkit-scrollbar-track {
     background: #282A36;
+    background: var(--scrollbar-track-background);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #888;
+    background: var(--scrollbar-background);
     border-radius: 30px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+    background: var(--scrollbar-background-hover);
 }

@@ -209,6 +209,9 @@ function setDarkThemeDefaults() {
         themeButtonWidth: '1.8vw',
         consoleBackground: '#262A35',
         consoleColor: '#9EA1AA',
+        scrollbarTrackBackground: '#282A36',
+        scrollbarBackground: '#888',
+        scrollbarBackgroundHover: '#555',
     });
 }
 
@@ -223,6 +226,9 @@ function setLightThemeDefaults() {
         themeButtonWidth: '1.9vw',
         consoleBackground: '#FCF7E3',
         consoleColor: '#000000',
+        scrollbarTrackBackground: '#FCF7E3',
+        scrollbarBackground: '#DCDCDC',
+        scrollbarBackgroundHover: '#D3D3D3',
     });
 }
 
@@ -236,6 +242,9 @@ function setThemeDefaults(themeDefaults) {
     document.getElementById('theme-button').style.width = themeDefaults.themeButtonWidth;
     document.querySelector('.simple-console').style.backgroundColor = themeDefaults.consoleBackground;
     document.querySelector('.simple-console').style.color = themeDefaults.consoleColor;
+    document.getElementById('editor-wrapper').style.setProperty('--scrollbar-track-background', themeDefaults.scrollbarTrackBackground);
+    document.getElementById('editor-wrapper').style.setProperty('--scrollbar-background', themeDefaults.scrollbarBackground);
+    document.getElementById('editor-wrapper').style.setProperty('--scrollbar-background-hover', themeDefaults.scrollbarBackgroundHover);
 }
 
 function setHelpAnimationIconTimeout() {
