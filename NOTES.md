@@ -19,6 +19,7 @@
 - command history styling
 - the editor is misaligned on smaller screen
 - console slides upon editor buttons when editor is resized, and behaves weirdly overall
+- remember theme for reload, need appropriate spinner etc
 
 
 - need help? - modal
