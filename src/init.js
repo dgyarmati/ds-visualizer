@@ -15,6 +15,7 @@ function makeAceEditorResizable() {
     const wrapperElement = document.getElementById(wrapperElementId);
     const dragBarElement = document.getElementById(dragBarId);
     const editorButton = document.getElementById(menuBarId);
+    const console = document.querySelector('.simple-console');
 
     const editorBounds = editorElement.getBoundingClientRect();
 
@@ -29,6 +30,7 @@ function makeAceEditorResizable() {
         editorElement.style.opacity = '0';
 
         editorButton.style.display = 'none';
+        console.style.display = 'none';
 
         document.addEventListener('mousemove', mousemoveAction);
     };
@@ -51,6 +53,7 @@ function makeAceEditorResizable() {
         wrapperElement.style.width = editorWidth + 'px';
 
         editorButton.style.display = 'none';
+        console.style.display = 'none';
 
         dragBarElement.style.opacity = '0.15';
     };
@@ -78,6 +81,7 @@ function makeAceEditorResizable() {
             editorElement.style.opacity = '1';
 
             editorButton.style.display = 'block';
+            console.style.display = 'block';
 
             dragBarElement.style.opacity = '1';
 
@@ -110,8 +114,8 @@ function setupCodeEditor() {
         showPrintMargin: false,
     });
 
-    const editorId = EDITOR.container.id;
-    const wrapperElementId = editorId + '-wrapper';
+    // const editorId = EDITOR.container.id;
+    // const wrapperElementId = editorId + '-wrapper';
     // document.getElementById(wrapperElementId).style.width = (getLengthOfLongestLine(DEFAULT_CODE) + 4) + 'ch';
 
     makeAceEditorResizable();
