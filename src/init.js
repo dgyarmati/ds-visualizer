@@ -112,7 +112,7 @@ function setupCodeEditor() {
 
     const editorId = EDITOR.container.id;
     const wrapperElementId = editorId + '-wrapper';
-    document.getElementById(wrapperElementId).style.width = (getLengthOfLongestLine(DEFAULT_CODE) + 4) + 'ch';
+    // document.getElementById(wrapperElementId).style.width = (getLengthOfLongestLine(DEFAULT_CODE) + 4) + 'ch';
 
     makeAceEditorResizable();
 }
