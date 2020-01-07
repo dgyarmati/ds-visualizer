@@ -18,6 +18,9 @@
 - add a clear command to console
 - command history styling
 - fix command buttons distance from editor
+    = check distance of dropdown
+- flickering editor on loading: try removing console and see if issue persists. if so, delay script exec - loading
+screen?
 
 - need help? - modal
 - error handling
