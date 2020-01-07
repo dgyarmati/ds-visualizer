@@ -21,7 +21,7 @@ function makeAceEditorResizable() {
     const offset = 0;
     window.draggingAceEditor[editorId] = false;
 
-    let mousedownAction = function (event) {
+    let mousedownAction = function(event) {
 
         event.preventDefault();
 
@@ -33,7 +33,7 @@ function makeAceEditorResizable() {
         document.addEventListener('mousemove', mousemoveAction);
     };
 
-    let mousemoveAction = function (event) {
+    let mousemoveAction = function(event) {
 
         const resolution = {
             top: editorBounds.top + document.body.scrollTop
@@ -57,7 +57,7 @@ function makeAceEditorResizable() {
 
     dragBarElement.addEventListener('mousedown', mousedownAction);
 
-    let mouseupAction = function (event) {
+    let mouseupAction = function(event) {
         if (window.draggingAceEditor[editorId]) {
 
             const resolution = {
@@ -269,4 +269,23 @@ function handleCommand(command) {
     }
 }
 
+function onReady(callback) {
+    let intervalId = window.setInterval(function() {
+        if (document.readyState === "complete") {
+            window.clearInterval(intervalId);
+            callback.call(this);
+        }
+    }, 1000);
+}
+
+function setVisible(selector, visible) {
+    document.querySelector(selector).style.display = visible ? 'block' : 'none';
+}
+
+onReady(function() {
+    setVisible('.container', true);
+    setVisible('#loading', false);
+});
+
 init();
+
