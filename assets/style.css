@@ -339,7 +339,7 @@ a {
     width: 100vw;
     height: 100vh;
     background-color: #282A36;
-    background-image: url("spinner.gif");
+    background-image: url("img/spinner.gif");
     background-repeat: no-repeat;
     background-position: center;
 }
