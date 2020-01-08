@@ -300,9 +300,5 @@ onReady(function() {
     setVisible('#loading-spinner', false);
 });
 
-window.addEventListener('resize', function () {
-    window.location.reload();
-});
-
 init();
 
