@@ -9,13 +9,12 @@ function makeAceEditorResizable() {
     const editorId = EDITOR.container.id;
     const dragBarId = editorId + '-drag-bar';
     const wrapperElementId = editorId + '-wrapper';
-    const menuBarId = 'menu-bar';
+    const menuBarId = 'controls';
 
     const editorElement = document.getElementById(editorId);
     const wrapperElement = document.getElementById(wrapperElementId);
     const dragBarElement = document.getElementById(dragBarId);
-    const editorButton = document.getElementById(menuBarId);
-    const console = document.querySelector('.simple-console');
+    const controlsBar = document.getElementById(menuBarId);
 
     const editorBounds = editorElement.getBoundingClientRect();
 
@@ -29,8 +28,7 @@ function makeAceEditorResizable() {
         window.draggingAceEditor[editorId] = true;
         editorElement.style.opacity = '0';
 
-        editorButton.style.display = 'none';
-        console.style.display = 'none';
+        controlsBar.style.display = 'none';
 
         document.addEventListener('mousemove', mousemoveAction);
     };
@@ -52,8 +50,7 @@ function makeAceEditorResizable() {
         wrapperElement.style.height = editorHeight + 'px';
         wrapperElement.style.width = editorWidth + 'px';
 
-        editorButton.style.display = 'none';
-        console.style.display = 'none';
+        controlsBar.style.display = 'none';
 
         dragBarElement.style.opacity = '0.15';
     };
@@ -80,8 +77,7 @@ function makeAceEditorResizable() {
             if (editorWidth <= wrapperElement.style.width) editorElement.style.width = editorWidth + 'px';
             editorElement.style.opacity = '1';
 
-            editorButton.style.display = 'block';
-            console.style.display = 'block';
+            controlsBar.style.display = 'block';
 
             dragBarElement.style.opacity = '1';
 
