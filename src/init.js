@@ -1,4 +1,4 @@
-function dragElement(element) {
+function dragWindow(element) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     if (document.getElementById(element.id)) {
         // if present, the header is where you move the DIV from:
@@ -16,10 +16,10 @@ function dragElement(element) {
         pos4 = e.clientY;
         document.onmouseup = closeDragElement;
         // call a function whenever the cursor moves:
-        document.onmousemove = elementDrag;
+        document.onmousemove = dragElement;
     }
 
-    function elementDrag(e) {
+    function dragElement(e) {
         e = e || window.event;
         e.preventDefault();
         // calculate the new cursor position:
@@ -39,7 +39,7 @@ function dragElement(element) {
     }
 }
 
-dragElement(document.getElementById("ed-dbg"));
+dragWindow(document.getElementById("ed-dbg"));
 
 /**
  * Function to make ace editor resizable by dragging.
@@ -302,7 +302,7 @@ const console = new SimpleConsole({
     storageID: "simple-console",
 });
 
-document.getElementById('editor-wrapper').appendChild(console.element);
+document.getElementById('console-container').appendChild(console.element);
 
 function handleCommand(command) {
     let err;

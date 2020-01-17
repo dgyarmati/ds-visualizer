@@ -372,3 +372,7 @@ a {
     background: #555;
     background: var(--scrollbar-background-hover);
 }
+
+#console-container {
+    position: relative;
+}
