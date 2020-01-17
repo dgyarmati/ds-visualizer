@@ -7,6 +7,10 @@ body {
     position: relative;
 }
 
+.editor-drag-bar {
+    position: absolute;
+}
+
 .app-editor-wrapper {
     margin: 1vh 0 0 1vw;
     padding-top: 2vh;
