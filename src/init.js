@@ -44,8 +44,8 @@ dragWindow(document.getElementById("ed-dbg"));
 function positionConsole() {
     const editorWrapperHeight = document.getElementById('editor-wrapper').offsetHeight;
     const menuBarHeight = document.getElementById('menu-bar').offsetHeight;
-    let blankDiv = document.getElementById('blank-div');
-    blankDiv.style.height = editorWrapperHeight + menuBarHeight + 25 + 'px';
+    let consoleContainer = document.getElementById('console-container');
+    consoleContainer.style.top = editorWrapperHeight + menuBarHeight + 25 + 'px';
 }
 
 positionConsole();
