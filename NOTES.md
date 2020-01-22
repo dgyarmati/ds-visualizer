@@ -21,6 +21,8 @@
 - console slides upon editor buttons when editor is resized, and behaves weirdly overall
 - remember theme for reload, need appropriate spinner etc
 - window dragging: after finish, margins are lost
+- prevent dragging editor when trying to select text
+- top property on console screws up dragging big time
 
 
 - need help? - modal

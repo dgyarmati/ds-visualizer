@@ -1,4 +1,4 @@
-function dragWindow(element) {
+function makeWindowDraggable(element) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     if (document.getElementById(element.id)) {
         // if present, the header is where you move the DIV from:
@@ -39,7 +39,8 @@ function dragWindow(element) {
     }
 }
 
-dragWindow(document.getElementById("ed-dbg"));
+makeWindowDraggable(document.getElementById("ed-dbg"));
+makeWindowDraggable(document.getElementById("console-container"));
 
 function positionConsole() {
     const editorWrapperHeight = document.getElementById('editor-wrapper').offsetHeight;
