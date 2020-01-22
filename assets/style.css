@@ -375,4 +375,11 @@ a {
 
 #console-container {
     position: relative;
+    margin-left: 1vw;
+}
+
+#blank-div {
+    visibility: hidden;
+    width: 1px;
+    max-width: 1px;
 }

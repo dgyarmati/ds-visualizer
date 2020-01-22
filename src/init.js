@@ -41,6 +41,15 @@ function dragWindow(element) {
 
 dragWindow(document.getElementById("ed-dbg"));
 
+function positionConsole() {
+    const editorWrapperHeight = document.getElementById('editor-wrapper').offsetHeight;
+    const menuBarHeight = document.getElementById('menu-bar').offsetHeight;
+    let blankDiv = document.getElementById('blank-div');
+    blankDiv.style.height = editorWrapperHeight + menuBarHeight + 25 + 'px';
+}
+
+positionConsole();
+
 /**
  * Function to make ace editor resizable by dragging.
  */
