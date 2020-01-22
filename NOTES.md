@@ -23,6 +23,7 @@
 - window dragging: after finish, margins are lost
 - prevent dragging editor when trying to select text
 - top property on console screws up dragging big time
+- console wrapper obscures help menu
 
 
 - need help? - modal
