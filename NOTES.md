@@ -24,6 +24,7 @@
 - prevent dragging editor when trying to select text
 - top property on console screws up dragging big time
 - console wrapper obscures help menu
+- resizing results in dragging as well
 
 
 - need help? - modal

@@ -1,46 +1,22 @@
-function makeWindowDraggable(element) {
-    let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    if (document.getElementById(element.id)) {
-        // if present, the header is where you move the DIV from:
-        document.getElementById(element.id).onmousedown = dragMouseDown;
-    } else {
-        // otherwise, move the DIV from anywhere inside the DIV:
-        element.onmousedown = dragMouseDown;
+function makeElementDraggable(id) {
+    document.getElementById(id).addEventListener('mousedown', mouseDown, false);
+    window.addEventListener('mouseup', mouseUp, false);
+
+    function mouseUp() {
+        window.removeEventListener('mousemove', dragWindow, true);
     }
 
-    function dragMouseDown(e) {
-        e = e || window.event;
-        e.preventDefault();
-        // get the mouse cursor position at startup:
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        document.onmouseup = closeDragElement;
-        // call a function whenever the cursor moves:
-        document.onmousemove = dragElement;
+    function mouseDown(e) {
+        window.addEventListener('mousemove', dragWindow, true);
     }
 
-    function dragElement(e) {
-        e = e || window.event;
-        e.preventDefault();
-        // calculate the new cursor position:
-        pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        // set the element's new position:
-        element.style.top = (element.offsetTop - pos2) + "px";
-        element.style.left = (element.offsetLeft - pos1) + "px";
-    }
-
-    function closeDragElement() {
-        // stop moving when mouse button is released:
-        document.onmouseup = null;
-        document.onmousemove = null;
+    function dragWindow(e) {
+        let element = document.getElementById(id);
+        element.style.position = 'absolute';
+        element.style.left = e.clientX + 'px';
+        element.style.top = e.clientY + 'px';
     }
 }
-
-makeWindowDraggable(document.getElementById("ed-dbg"));
-makeWindowDraggable(document.getElementById("console-container"));
 
 function positionConsole() {
     const editorWrapperHeight = document.getElementById('editor-wrapper').offsetHeight;
@@ -50,6 +26,8 @@ function positionConsole() {
 }
 
 positionConsole();
+makeElementDraggable('console-container');
+makeElementDraggable('ed-dbg');
 
 /**
  * Function to make ace editor resizable by dragging.
@@ -72,7 +50,7 @@ function makeAceEditorResizable() {
     const offset = 0;
     window.draggingAceEditor[editorId] = false;
 
-    let mousedownAction = function(event) {
+    let mousedownAction = function (event) {
 
         event.preventDefault();
 
@@ -84,7 +62,7 @@ function makeAceEditorResizable() {
         document.addEventListener('mousemove', mousemoveAction);
     };
 
-    let mousemoveAction = function(event) {
+    let mousemoveAction = function (event) {
 
         const resolution = {
             top: editorBounds.top + document.body.scrollTop
@@ -108,7 +86,7 @@ function makeAceEditorResizable() {
 
     dragBarElement.addEventListener('mousedown', mousedownAction);
 
-    let mouseupAction = function(event) {
+    let mouseupAction = function (event) {
         if (window.draggingAceEditor[editorId]) {
 
             const resolution = {
@@ -330,7 +308,7 @@ function handleCommand(command) {
 }
 
 function onReady(callback) {
-    let intervalId = window.setInterval(function() {
+    let intervalId = window.setInterval(function () {
         if (document.readyState === "complete") {
             window.clearInterval(intervalId);
             callback.call(this);
@@ -342,7 +320,7 @@ function setVisible(selector, visible) {
     document.querySelector(selector).style.display = visible ? 'block' : 'none';
 }
 
-onReady(function() {
+onReady(function () {
     setVisible('.container', true);
     setVisible('#loading-spinner', false);
 });
