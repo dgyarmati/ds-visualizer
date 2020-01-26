@@ -10,8 +10,10 @@
 </head>
 <body>
 
+<canvas id="nodes" class="draggable"></canvas>
 <div id="container" class="container">
     <div class="editor-drag-bar draggable" id="ed-dbg">
+        <div title="drag window" id="editor-header" class="draggable"></div>
         <div id="editor-wrapper" class="app-editor-wrapper">
             <div id="editor" class="app-editor"></div>
             <div id="editor-drag-bar" class="app-editor-drag-bar">
@@ -26,7 +28,7 @@
                             <p>The JavaScript code is provided by you; the visualization is accessible via a simple API.</p>
                             <h2>UI</h2>
                             <p>The controls below the editor, from left to right: toggle <span style="color: #D2735D"><strong>help window</strong></span>; toggle <span style="color: #D2735D"><strong>console</strong></span>; select <span style="color: #D2735D"><strong>data structure</strong></span>; change <span style="color: #D2735D"><strong>theme</strong></span>; <span style="color: #D2735D"><strong>run code</strong></span>.</p>
-                            <p>The editor, the console and the visualizer area are all draggable. The editor window and the console are both resizable.</p>
+                            <p>The editor, the console and the visualizer area are all draggable; the latter two by the <span style="color: #5DBCD2">blue dot</span> in the upper left corner. The editor window and the console are both resizable.</p>
                             <h2>API</h2>
                             <p>It's best to think of the API as a glorified version of <code>console.log()</code>.</p>
                             <p>Generally, you need to define the data structure, instantiate it, and call the <span style="color: #5DBCD2"><code>draw(instance)</code></span> method in order to see the default visual output.</p>
@@ -52,8 +54,9 @@
         </div>
     </div>
 </div>
-<div id="console-container"></div>
-<canvas id="nodes" class="draggable"></canvas>
+<div id="console-container">
+    <div title="drag window" id="console-header" class="draggable"></div>
+</div>
 <div id="loading-spinner"></div>
 <script src="lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src="lib/simple-console/simple-console.js"></script>

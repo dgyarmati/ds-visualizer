@@ -1,5 +1,5 @@
-function makeElementDraggable(id) {
-    document.getElementById(id).addEventListener('mousedown', mouseDown, false);
+function makeElementDraggable(headerID, contentID) {
+    document.getElementById(headerID).addEventListener('mousedown', mouseDown, false);
     window.addEventListener('mouseup', mouseUp, false);
 
     function mouseUp() {
@@ -11,7 +11,7 @@ function makeElementDraggable(id) {
     }
 
     function dragWindow(e) {
-        let element = document.getElementById(id);
+        let element = document.getElementById(contentID);
         element.style.position = 'absolute';
         element.style.left = e.clientX + 'px';
         element.style.top = e.clientY + 'px';
@@ -26,8 +26,8 @@ function positionConsole() {
 }
 
 positionConsole();
-makeElementDraggable('console-container');
-makeElementDraggable('ed-dbg');
+makeElementDraggable('editor-header', 'ed-dbg');
+makeElementDraggable('console-header', 'console-container');
 
 /**
  * Function to make ace editor resizable by dragging.

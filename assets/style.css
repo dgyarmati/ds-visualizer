@@ -46,7 +46,7 @@ body {
 }
 
 .menu {
-    margin-top: 3.5vh;
+    margin-top: 2.5vh;
     height: 8.7vh;
 }
 
@@ -374,6 +374,29 @@ a {
 }
 
 #console-container {
+    margin-top: 1vh;
     position: relative;
+    margin-left: 1vw;
+    height: 1vh;
+    z-index: 100;
+}
+
+#console-header {
+    margin-top: 1vh;
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    background: #5DBCD2;
+    z-index: 100;
+    margin-bottom: 0.5vh;
+}
+
+#editor-header {
+    margin-top: 1vh;
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    background: #5DBCD2;
+    z-index: 100;
     margin-left: 1vw;
 }
