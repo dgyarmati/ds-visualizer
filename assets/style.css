@@ -120,7 +120,7 @@ body {
 }
 
 .help-modal {
-    z-index: 11;
+    z-index: 101;
     position: fixed;
     left: 0;
     top: 0;
@@ -378,6 +378,7 @@ a {
     position: relative;
     margin-left: 1vw;
     height: 1vh;
+    width: 1vw;
     z-index: 100;
 }
 

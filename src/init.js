@@ -198,10 +198,14 @@ function toggleHelpModal() {
     const modal = document.querySelector('.help-modal');
     modal.classList.toggle("show-modal");
 
+    let console = document.getElementById('console-container');
+    console.style.display = 'none';
+
     function windowOnClick(event) {
         if (event.target === modal) {
             modal.classList.toggle("show-modal");
             toggle('help-icon', 'hidden-help', 'visible-help');
+            console.style.display = 'block';
             window.removeEventListener("click", windowOnClick);
         }
     }
