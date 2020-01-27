@@ -256,7 +256,7 @@ function paint(node, restoreVisited = true) {
 
 function restorePreviousNodesToDefault(node) {
     visitedNodes.push(node);
-    if (visitedNodes.length > 2) {
+    if (visitedNodes.length > 1) {
         let previousNode = visitedNodes[visitedNodes.length - 2];
         CONTEXT.strokeStyle = DEFAULT_NODE_COLOR;
         drawCircle(NODE_COORDINATES.get(previousNode).x, NODE_COORDINATES.get(previousNode).y, '');
