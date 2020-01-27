@@ -25,6 +25,7 @@
 - top property on console screws up dragging big time
 - console wrapper obscures help menu
 - resizing results in dragging as well
+- clear console command
 
 
 - need help? - modal

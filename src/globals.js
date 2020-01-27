@@ -1,4 +1,5 @@
 const NODE_COORDINATES = new Map();    // stores the nodes and their coordinates to be drawn at; example: [node: {x: 0, y: 2}]
+const visitedNodes = [];
 
 const CANVAS = document.getElementById('nodes');
 const CONTEXT = CANVAS.getContext('2d');
