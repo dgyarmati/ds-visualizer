@@ -58,6 +58,7 @@ const DEFAULT_CODE =
     '        while (nodes.length) {\n' +
     '            let node = nodes.shift();\n' +
     '            nodes.push(...node.children);\n' +
+    '            paint(node);\n' +
     '        }\n' +
     '    }\n' +
     '}\n' +
@@ -70,4 +71,5 @@ const DEFAULT_CODE =
     'node.children[0].add(6);\n' +
     'let tree = new Tree();\n' +
     'tree.root = node;\n' +
-    'draw(tree);';
+    'draw(tree);' +
+    'tree.traverseBF();';

@@ -242,7 +242,6 @@ function findIntersect(origin, target, radius) {
  */
 function paint(node, restoreVisited = true) {
     // TODO:
-        // I need to restore the color of the previous nodes
         // I need a delay for the traversal
         // I need to clear visitedNodes at every run
 
