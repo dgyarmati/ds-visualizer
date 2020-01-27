@@ -237,18 +237,17 @@ function findIntersect(origin, target, radius) {
 /**
  * Paints a node on the canvas. To be called by the user code to display the current node.
  *
- * @param  {Node} node            - node to be displayed on the canvas
- * @param  {boolean} restoreVisited            - repaint previously visited nodes to default color (true by default)
+ * @param  {Node} node                - node to be displayed on the canvas
+ * @param  {boolean} restorePrevious   - repaint previously visited nodes to default color (true by default)
  */
-function paint(node, restoreVisited = true) {
+function paint(node, restorePrevious = true) {
     // TODO:
         // I need a delay for the traversal
-        // I need to clear visitedNodes at every run
 
     CONTEXT.strokeStyle = ACTIVE_NODE_COLOR;
     drawCircle(NODE_COORDINATES.get(node).x, NODE_COORDINATES.get(node).y, '');
 
-    if (restoreVisited) {
+    if (restorePrevious) {
         restorePreviousNodesToDefault(node);
     }
 }
