@@ -233,9 +233,10 @@ function findIntersect(origin, target, radius) {
 /**
  * Paints a node on the canvas. To be called by the user code to display the current node.
  */
-// function drawNode() {
-//     drawCircle(x, y);
-//     y += changeY;
-// }
+function paint(node) {
+    //look up the coordinates given the node
+    //at those coordinates, redraw circle with different color
+    console.log(NODE_COORDINATES.get(node));
+}
 
 
