@@ -148,16 +148,20 @@ function changeCoordinatesForDefaultTree(matrix) {
 }
 
 function drawTree() {
-    CONTEXT.strokeStyle = DEFAULT_NODE_COLOR;
+    setNodeDisplayProperties(DEFAULT_NODE_COLOR);
+
+    NODE_COORDINATES.forEach((coords, node) => {
+        drawCircle(coords.x, coords.y, node.data);
+    });
+}
+
+function setNodeDisplayProperties(nodeColor) {
+    CONTEXT.strokeStyle = nodeColor;
     CONTEXT.lineWidth = NODE_STROKE_WIDTH;
     CONTEXT.font = NODE_FONT;
     CONTEXT.textBaseline = 'middle';
     CONTEXT.textAlign = 'center';
     CONTEXT.fillStyle = CURRENT_FONT_COLOR;
-
-    NODE_COORDINATES.forEach((coords, node) => {
-        drawCircle(coords.x, coords.y, node.data);
-    });
 }
 
 /**
@@ -236,7 +240,12 @@ function findIntersect(origin, target, radius) {
 function paint(node) {
     //look up the coordinates given the node
     //at those coordinates, redraw circle with different color
-    console.log(NODE_COORDINATES.get(node));
+        // problem: I'll need conjure up the data from somewhere as well? seems to work fine though...
+        // bug: ok, now it works, but:
+            // I need to restore the color of the previous nodes
+            // I need a delay for the traversal
+    setNodeDisplayProperties(ACTIVE_NODE_COLOR);
+    drawCircle(NODE_COORDINATES.get(node).x, NODE_COORDINATES.get(node).y, '');
 }
 
 
