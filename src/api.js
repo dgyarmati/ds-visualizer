@@ -236,25 +236,30 @@ function findIntersect(origin, target, radius) {
 
 /**
  * Paints a node on the canvas. To be called by the user code to display the current node.
+ *
+ * @param  {Node} node            - node to be displayed on the canvas
+ * @param  {boolean} restoreVisited            - repaint previously visited nodes to default color (true by default)
  */
-function paint(node, repaintVisited = true) {
-    //look up the coordinates given the node
-    //at those coordinates, redraw circle with different color
-        // problem: I'll need conjure up the data from somewhere as well? seems to work fine though...
-        // bug: ok, now it works, but:
-            // I need to restore the color of the previous nodes
-            // I need a delay for the traversal
-    if (repaintVisited) {
-        visitedNodes.push(node);
-        if (visitedNodes.length > 2) {
-            let previousNode = visitedNodes[visitedNodes.length -2];
-            CONTEXT.strokeStyle = DEFAULT_NODE_COLOR;
-            drawCircle(NODE_COORDINATES.get(previousNode).x, NODE_COORDINATES.get(previousNode).y, '');
-        }
-    }
+function paint(node, restoreVisited = true) {
+    // TODO:
+        // I need to restore the color of the previous nodes
+        // I need a delay for the traversal
+        // I need to clear visitedNodes at every run
 
     CONTEXT.strokeStyle = ACTIVE_NODE_COLOR;
     drawCircle(NODE_COORDINATES.get(node).x, NODE_COORDINATES.get(node).y, '');
+
+    if (restoreVisited) {
+        restorePreviousNodesToDefault(node);
+    }
 }
 
+function restorePreviousNodesToDefault(node) {
+    visitedNodes.push(node);
+    if (visitedNodes.length > 2) {
+        let previousNode = visitedNodes[visitedNodes.length - 2];
+        CONTEXT.strokeStyle = DEFAULT_NODE_COLOR;
+        drawCircle(NODE_COORDINATES.get(previousNode).x, NODE_COORDINATES.get(previousNode).y, '');
+    }
+}
 

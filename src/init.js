@@ -149,6 +149,7 @@ function setupCodeEditor() {
 // reading user input and attempting to parse it as JS code, creating a tree
 function executeInput() {
     try {
+        visitedNodes.length = 0;
         NODE_COORDINATES.clear();
         clearCanvas();
         const code = EDITOR.getValue();
