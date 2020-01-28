@@ -31,7 +31,7 @@ const EDGE_STROKE_WIDTH = 2;
 
 let TREE = null;
 
-let nodePaintInterval = 500;
+let nodePaintInterval = 1000;
 
 const DEFAULT_CODE =
     'class Node {\n' +

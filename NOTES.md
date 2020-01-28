@@ -28,6 +28,7 @@
 - clear console command
 - slower / faster node paint; pause
 - no paint at startup
+- maybe color edges as well
 
 
 - need help? - modal

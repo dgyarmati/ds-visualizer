@@ -121,12 +121,6 @@ function makeAceEditorResizable() {
     document.addEventListener('mouseup', mouseupAction);
 }
 
-function getLengthOfLongestLine(text) {
-    return text.split('\n')
-        .reduce((a, b) => a.length > b.length ? a : b)
-        .length;
-}
-
 function setupCodeEditor() {
     EDITOR.setTheme(EDITOR_DARK_THEME);
     setDarkThemeDefaults();
@@ -138,10 +132,6 @@ function setupCodeEditor() {
         selectionStyle: 'text',
         showPrintMargin: false,
     });
-
-    // const editorId = EDITOR.container.id;
-    // const wrapperElementId = editorId + '-wrapper';
-    // document.getElementById(wrapperElementId).style.width = (getLengthOfLongestLine(DEFAULT_CODE) + 4) + 'ch';
 
     makeAceEditorResizable();
 }

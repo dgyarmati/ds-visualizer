@@ -252,7 +252,7 @@ function paint(node, restorePrevious = true) {
         }
     }, nodePaintInterval);
 
-    nodePaintInterval += 500;
+    nodePaintInterval += 1000;
 }
 
 function restorePreviousNodeToDefault(node) {
