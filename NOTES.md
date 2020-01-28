@@ -26,6 +26,8 @@
 - console wrapper obscures help menu
 - resizing results in dragging as well
 - clear console command
+- slower / faster node paint; pause
+- no paint at startup
 
 
 - need help? - modal

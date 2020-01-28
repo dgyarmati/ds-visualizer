@@ -149,6 +149,7 @@ function setupCodeEditor() {
 // reading user input and attempting to parse it as JS code, creating a tree
 function executeInput() {
     try {
+        nodePaintInterval = 500;
         visitedNodes.length = 0;
         NODE_COORDINATES.clear();
         clearCanvas();

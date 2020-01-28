@@ -241,18 +241,21 @@ function findIntersect(origin, target, radius) {
  * @param  {boolean} restorePrevious   - repaint previously visited nodes to default color (true by default)
  */
 function paint(node, restorePrevious = true) {
-    // TODO:
-        // I need a delay for the traversal
+    setTimeout(() => {
+        CONTEXT.strokeStyle = ACTIVE_NODE_COLOR;
+        drawCircle(NODE_COORDINATES.get(node).x, NODE_COORDINATES.get(node).y, '');
+    }, nodePaintInterval);
 
-    CONTEXT.strokeStyle = ACTIVE_NODE_COLOR;
-    drawCircle(NODE_COORDINATES.get(node).x, NODE_COORDINATES.get(node).y, '');
+    setTimeout(() => {
+        if (restorePrevious) {
+            restorePreviousNodeToDefault(node);
+        }
+    }, nodePaintInterval);
 
-    if (restorePrevious) {
-        restorePreviousNodesToDefault(node);
-    }
+    nodePaintInterval += 500;
 }
 
-function restorePreviousNodesToDefault(node) {
+function restorePreviousNodeToDefault(node) {
     visitedNodes.push(node);
     if (visitedNodes.length > 1) {
         let previousNode = visitedNodes[visitedNodes.length - 2];
