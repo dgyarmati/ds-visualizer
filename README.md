@@ -23,7 +23,7 @@ I like trees. Also, I'm learning HTML/CSS/JS, and wanted to build something prac
 In a broader sense, though, I always have trouble tracing data flow when learning algorithms and data structures for ~~surviving interview hell~~ building my CS fundamentals, and I'm somewhat dissatisfied with the visualizations available out there, because they don't
 let you provide your own code. The ultimate goal for this project is to create a visual debugger of sorts for a plethora of data structures.
 
-I was partially inspired by Bret Victor's somewhat famous [essay](http://worrydream.com/#!/LearnableProgramming) on the topic.
+I was also partially inspired by Bret Victor's somewhat famous [essay](http://worrydream.com/#!/LearnableProgramming) on the topic of a more visual coding experience.
 
 ### A Note on Code Quality
 
