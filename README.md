@@ -4,6 +4,8 @@ The app lets you visualize the data flow of a tree data structure.
 
 The JavaScript code is provided by you; the visualization is accessible via a simple API.
 
+It should run fine in Chrome and Firefox.
+
 ### Usage
 
 It's best to think of the API as a glorified version of console.log().
