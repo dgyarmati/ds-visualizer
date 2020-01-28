@@ -1,31 +1,38 @@
-# Data Structure Visualizer
+# Tree Visualizer
 
-A simple graphical debugger to help visualize data structures. It's been built using HTML/CSS and a bunch of JS scripts. The code editor is a customized and heavily trimmed version of the [ACE Editor](https://github.com/ajaxorg/ace). 
+The app lets you visualize the data flow of a tree data structure.
 
-As of date, the debugger only supports non-binary trees, but there is more to come (hopefully).
+The JavaScript code is provided by you; the visualization is accessible via a simple API.
 
-##### How?
+###### Usage
 
-Enter data structures and algorithms operating on them enclosed in a class implemented in JavaScript to the editor, and press `RUN` for the visualization.
+It's best to think of the API as a glorified version of console.log().
 
-Different data structures use different APIs:
+Generally, you need to define the tree, instantiate it, and call the `draw(instance)` method in order to see the whole thing.
 
-___
+Call the `paint(node)` method in your algorithm to trace its execution.
 
-###### Trees
-
-Provide a `Node` class in the editor, which has an array named `children`.
-
-In order to draw the tree in its entirety, instantiate the node, and call `draw(nameOfInstance)`.
-
-For visualizing the execution of an algorithm, say, a breadth-first traversal, you need to call the `drawNode()` method in it, much like how would you use `console.log()`.
-
-___
+A node class or similar - so, anything which holds the `data` and the `children` (name them so) - will be necessary.
 
 That's it! Since the program attempts to parse any JS which you throw at it, it can be also used as a somewhat stunted code editor.  
 
 ##### Why?
 
-Because I can. On a more serious note, I always have trouble visualizing data flow when learning algorithms and data structures, and figured a visual debugger of sorts might help with this issue. I was partially inspired by Bret Victor's somewhat famous [essay](http://worrydream.com/#!/LearnableProgramming) on the topic.
+I like trees. Also, I'm learning HTML/CSS/JS, and wanted to build something practical with them without using a framework.
 
-Plus, I also wanted to build something with pure HTML/CSS/JS, because frontend technologies are kind of built on these three, and it's good to know the fundamentals, I guess.
+In a broader sense, though, I always have trouble tracing data flow when learning algorithms and data structures for ~~surviving interview hell~~ building my CS fundamentals, and I'm somewhat dissatisfied with the usual visualizations, because they don't
+let you provide your own code. The ultimate goal for this project is to create a visual debugger of sorts for a plethora of data structures.
+
+I was partially inspired by Bret Victor's somewhat famous [essay](http://worrydream.com/#!/LearnableProgramming) on the topic.
+
+##### A Note on Code Quality
+
+![](https://imgs.xkcd.com/comics/code_quality.png)
+
+(From [xkcd](https://xkcd.com/1513/).)
+
+##### About & Accolades
+
+The code editor and the console are bastardized versions of [ACE](https://ace.c9.io/) and [Simple Console](https://github.com/1j01/simple-console), respectively.
+
+You're welcome to contribute to the project!
