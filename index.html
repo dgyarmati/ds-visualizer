@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Data Structure Visualizer</title>
+    <title>Tree Visualizer</title>
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/font-awesome/css/all.css">
     <link rel="stylesheet" href="lib/simple-console/simple-console.css">
@@ -23,30 +23,31 @@
                     <button title="help" onclick="toggle('help-icon', 'hidden-help', 'visible-help'); toggleHelpModal()" type="button" id="help-button" class="show-help-button"><i class="fas fa-question hidden-help help-animation" id="help-icon" aria-hidden="true"></i></button>
                     <div class="help-modal">
                         <div class="help-modal-content">
-                            <h1>Data Structure Visualizer</h1>
-                            <p>The app lets you visualize the data flow of the selected data structure.</p>
+                            <h1>Tree Visualizer</h1>
+                            <p>The app lets you visualize the data flow of a tree data structure.</p>
                             <p>The JavaScript code is provided by you; the visualization is accessible via a simple API.</p>
                             <h2>UI</h2>
-                            <p>The controls below the editor, from left to right: toggle <span style="color: #D2735D"><strong>help window</strong></span>; toggle <span style="color: #D2735D"><strong>console</strong></span>; select <span style="color: #D2735D"><strong>data structure</strong></span>; change <span style="color: #D2735D"><strong>theme</strong></span>; <span style="color: #D2735D"><strong>run code</strong></span>.</p>
+                            <p>The controls below the editor, from left to right: toggle <span style="color: #D2735D"><strong>help window</strong></span>; toggle <span style="color: #D2735D"><strong>console</strong></span>; change <span style="color: #D2735D"><strong>theme</strong></span>; <span style="color: #D2735D"><strong>run code</strong></span>.</p>
                             <p>The editor, the console and the visualizer area are all draggable; the latter two by the <span style="color: #5DBCD2">blue dot</span> in the upper left corner. The editor window and the console are both resizable.</p>
                             <h2>API</h2>
                             <p>It's best to think of the API as a glorified version of <code>console.log()</code>.</p>
-                            <p>Generally, you need to define the data structure, instantiate it, and call the <span style="color: #5DBCD2"><code>draw(instance)</code></span> method in order to see the default visual output.</p>
-                            <p>Call the <span style="color: #5DBCD2"><code>paint()</code></span> method in your algorithm to trace its execution.</p>
+                            <p>Generally, you need to define the tree, instantiate it, and call the <span style="color: #5DBCD2"><code>draw(instance)</code></span> method in order to see the whole thing.</p>
+                            <p>Call the <span style="color: #5DBCD2"><code>paint(node)</code></span> method in your algorithm to trace its execution.</p>
+                            <p>A node class or similar - so, anything which holds the <span style="color: #5DBCD2"><code>data</code></span> and the <span style="color: #5DBCD2"><code>children</code></span> (name them so) - will be necessary.</p>
                             <h2>About & Accolades</h2>
                             <p>The code editor and the console are bastardized versions of <a href="https://ace.c9.io/">ACE</a> and
                                 <a href="https://github.com/1j01/simple-console">Simple Console</a>, respectively.</p>
                             <p>The source code is available <a href="https://github.com/dgyarmati/ds-visualizer">here</a>. You're welcome to contribute!</p>
-                            <p>Made by <a href="https://github.com/dgyarmati">this</a> <span style="text-decoration: line-through;">incredibly handsome</span> humble guy.</p>
+                            <p>Made by <a href="https://github.com/dgyarmati">this</a> <span style="text-decoration: line-through;">incredibly handsome</span> guy.</p>
                         </div>
                     </div>
                     <button title="show console" onclick="toggle('terminal-icon', 'hidden-console', 'visible-console'); toggleConsole()" type="button" id="console-button" class="show-console-button"><i class="fas fa-terminal hidden-console" id="terminal-icon" aria-hidden="true"></i></button>
-                    <div title="select data structure" class="ds-selector">
-                        <button type="button" class="ds-selector-button"><i class="fas fa-list list-icon" aria-hidden="true"></i></button>
-                        <div class="ds-selector-content">
-                            <p class="ds">Tree</p>
-                        </div>
-                    </div>
+<!--                    <div title="select data structure" class="ds-selector">-->
+<!--                        <button type="button" class="ds-selector-button"><i class="fas fa-list list-icon" aria-hidden="true"></i></button>-->
+<!--                        <div class="ds-selector-content">-->
+<!--                            <p class="ds">Tree</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <button title="switch theme" onclick="switchTheme()" type="button" id="theme-button" class="theme-change-button"></button>
                     <button title="run code" onclick="executeInput()" type="button" id="editor-button" class="run-button">Run</button>
                 </div>
