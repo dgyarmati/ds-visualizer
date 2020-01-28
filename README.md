@@ -4,7 +4,7 @@ The app lets you visualize the data flow of a tree data structure.
 
 The JavaScript code is provided by you; the visualization is accessible via a simple API.
 
-#### Usage
+### Usage
 
 It's best to think of the API as a glorified version of console.log().
 
@@ -16,7 +16,7 @@ A node class or similar - so, anything which holds the `data` and the `children`
 
 That's it! Since the program attempts to parse any JS which you throw at it, it can be also used as a somewhat stunted code editor.  
 
-#### Why?
+### Why?
 
 I like trees. Also, I'm learning HTML/CSS/JS, and wanted to build something practical with them without using a framework.
 
@@ -25,13 +25,13 @@ let you provide your own code. The ultimate goal for this project is to create a
 
 I was partially inspired by Bret Victor's somewhat famous [essay](http://worrydream.com/#!/LearnableProgramming) on the topic.
 
-#### A Note on Code Quality
+### A Note on Code Quality
 
 ![](https://imgs.xkcd.com/comics/code_quality.png)
 
 (From [xkcd](https://xkcd.com/1513/).)
 
-#### About & Accolades
+### About & Accolades
 
 The code editor and the console are bastardized versions of [ACE](https://ace.c9.io/) and [Simple Console](https://github.com/1j01/simple-console), respectively.
 
