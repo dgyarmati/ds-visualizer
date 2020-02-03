@@ -1,10 +1,12 @@
-# Tree Visualizer
+# [Tree Visualizer](https://tree-visualizer-app.firebaseapp.com)
 
 The app lets you visualize the data flow of a tree data structure.
 
 The JavaScript code is provided by you; the visualization is accessible via a simple API.
 
 It should run fine in Chrome and Firefox.
+
+Check it out [here](https://tree-visualizer-app.firebaseapp.com).
 
 ### Usage
 
